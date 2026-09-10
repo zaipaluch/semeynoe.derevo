@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Родословное древо: Вишня, Кочмола, Голуб, Федченко, Зинченко</title>
+<title>Родословное древо: Вишня, Кочмола, Голуб, Федченко, Зинченко, Грицай</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
@@ -26,7 +26,7 @@
         margin: 0; 
         padding: 0; 
         font-family: 'Inter', -apple-system, sans-serif;
-        -webkit-tap-highlight-color: transparent; /* Убираем синее выделение при клике на телефоне */
+        -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -38,10 +38,9 @@
         -webkit-user-select: none;
         -webkit-touch-callout: none;
         color: #0f172a;
-        overscroll-behavior: none; /* Запрет pull-to-refresh на мобильных */
+        overscroll-behavior: none;
     }
 
-    /* === ОБЩИЙ КЛАСС МАТОВОГО СТЕКЛА === */
     .liquid-glass {
         background: var(--glass-bg);
         backdrop-filter: blur(20px) saturate(150%);
@@ -52,7 +51,6 @@
         box-shadow: var(--glass-shadow), var(--glass-glow);
     }
 
-    /* Верхняя панель */
     .top-bar {
         position: fixed;
         top: 20px;
@@ -98,7 +96,6 @@
         border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
-    /* Кнопки зума */
     .controls {
         position: fixed;
         bottom: 20px;
@@ -126,7 +123,6 @@
     }
     .btn-ctrl:active { transform: translateY(2px) scale(0.95); background: rgba(255, 255, 255, 0.4); }
 
-    /* Вкладки */
     .tab-view {
         width: 100vw;
         height: 100vh;
@@ -147,10 +143,9 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Холсты деревьев */
     .viewport-container {
         width: 100vw;
         height: 100vh;
@@ -159,7 +154,7 @@
         top: 0;
         left: 0;
         overflow: hidden;
-        touch-action: none; /* Блокируем стандартные жесты поверх холста */
+        touch-action: none;
     }
 
     .canvas-container {
@@ -170,7 +165,7 @@
         padding: 80px 100px 300px 100px;
         display: inline-block;
         min-width: 3600px;
-        will-change: transform; /* Оптимизация для плавной анимации */
+        will-change: transform;
     }
 
     .tree-svg-layer {
@@ -189,7 +184,6 @@
         stroke-linejoin: round;
     }
 
-    /* === КАРТОЧКИ ПЕРСОН === */
     .person-card {
         width: 165px;
         min-height: 195px;
@@ -212,7 +206,6 @@
         background: rgba(255, 255, 255, 0.4);
     }
     
-    /* Убираем hover блик на телефонах для производительности, оставляем легкий градиент */
     @media (hover: hover) {
         .person-card::after {
             content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
@@ -242,7 +235,6 @@
 
     .doc-indicator { position: absolute; top: 14px; left: 14px; font-size: 15px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
 
-    /* Аватарки */
     .avatar-wrapper {
         width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
         margin: 4px 0 12px 0; overflow: hidden; background: rgba(255, 255, 255, 0.8); border: 2px solid rgba(255, 255, 255, 1);
@@ -260,7 +252,6 @@
     .badge-status { font-size: 9px; font-weight: 800; padding: 4px 10px; border-radius: 8px; margin-top: auto; text-align: center; }
     .badge-yellow { background: rgba(255, 255, 255, 0.9); border: 1px solid #eab308; color: #854d0e; }
 
-    /* Сетки рядов */
     .ancestors-mega-block { display: flex; justify-content: center; align-items: flex-start; gap: 80px; margin-bottom: 100px; }
     .vishnya-ancestors-col { display: flex; flex-direction: column; align-items: center; }
     .kochmola-golub-composite { display: flex; flex-direction: column; }
@@ -281,7 +272,6 @@
     .fedchenko-gen-row { display: flex; justify-content: center; align-items: flex-start; gap: 120px; margin-bottom: 100px; }
     .fedchenko-gen-row-center { display: flex; justify-content: center; align-items: flex-start; margin-bottom: 100px; }
 
-    /* === ПРАВОСЛАВНЫЙ ДЕКОР ИКОН === */
     .orthodox-theme .history-card-box {
         background: linear-gradient(to bottom, #faf6f0, #f5ebd9); border: 2px solid #b48600;
         box-shadow: 0 10px 30px rgba(0,0,0,0.15), inset 0 0 15px rgba(180, 134, 0, 0.1);
@@ -298,20 +288,18 @@
     .orthodox-icon-card img { width: 100%; height: auto; max-height: 440px; object-fit: contain; background: #000; display: block; border-radius: 6px; }
     .orthodox-icon-title { margin-top: 12px; padding: 12px; font-family: "Georgia", serif; font-size: 14px; font-weight: bold; color: #fef3c7; text-align: center; background: #292524; border: 1px solid #b48600; border-radius: 6px; }
 
-    /* Подписи */
     .signatures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; width: 100%; margin-top: 20px; }
     .signature-card { border-radius: 20px; padding: 20px; display: flex; flex-direction: column; align-items: center; cursor: zoom-in; }
     .signature-card img { width: 100%; height: 140px; object-fit: contain; background: rgba(255,255,255,0.7); border-radius: 12px; border: 1px solid rgba(255,255,255,0.6); margin-bottom: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
     .signature-name { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 4px; text-align: center; }
     .signature-role { font-size: 13px; color: #475569; text-align: center; font-weight: 600; }
 
-    /* === ПОЛУПРОЗРАЧНЫЙ САЙДБАР (МОБИЛЬНАЯ АДАПТАЦИЯ) === */
     .sidebar {
         position: fixed;
-        right: -100%; /* Полностью скрыт за экраном */
+        right: -100%;
         top: 0;
         width: 450px;
-        max-width: 100vw; /* На телефоне будет 100% ширины */
+        max-width: 100vw;
         height: 100vh;
         background: rgba(248, 250, 252, 0.7);
         backdrop-filter: blur(20px) saturate(150%);
@@ -345,7 +333,6 @@
     .status-alert { padding: 14px; border-radius: 12px; font-size: 13px; line-height: 1.4; margin-bottom: 20px; }
     .status-alert.yellow { background: rgba(254,240,138,0.7); border: 1px solid #eab308; color: #854d0e; }
 
-    /* Аккордеон документов */
     .gallery-section { margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.5); padding-top: 24px; }
     .gallery-title { font-size: 14px; text-transform: uppercase; font-weight: 800; color: #0f172a; letter-spacing: 0.5px; margin-bottom: 16px; }
 
@@ -372,7 +359,6 @@
     .doc-img-container img { width: 100%; display: block; max-height: 250px; object-fit: contain; }
     .doc-img-overlay { position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); color: white; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 6px; pointer-events: none; }
 
-    /* === LIGHTBOX С ЗУМОМ И ПЕРЕТАСКИВАНИЕМ === */
     #lightbox-modal {
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
         background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -388,13 +374,12 @@
     .lightbox-hints { color: #94a3b8; margin-top: 8px; font-size: 11px; font-weight: 500; text-align: center; z-index: 2;}
     .lightbox-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; cursor: pointer; line-height: 1; z-index: 10; padding: 10px;}
 
-    /* === МЕДИАЗАПРОСЫ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ === */
     @media (max-width: 768px) {
         .top-bar { 
             top: 10px; left: 10px; right: 10px; padding: 8px 12px; border-radius: 16px; 
             max-width: calc(100vw - 20px); overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;
         }
-        .brand-title { display: none; } /* Прячем заголовок на телефоне для экономии места */
+        .brand-title { display: none; }
         .controls { bottom: 15px; right: 15px; padding: 8px; }
         .btn-ctrl { width: 40px; height: 40px; font-size: 20px; }
         
@@ -414,10 +399,11 @@
 <div class="top-bar liquid-glass">
     <div class="brand-title">Родословная</div>
     <div class="nav-tabs">
-        <button class="nav-tab-btn active" onclick="switchTab('main-tree')">🌳 Вишня / Кочмола</button>
-        <button class="nav-tab-btn" onclick="switchTab('fedchenko-tree')">🌿 Федченко / Зинченко</button>
-        <button class="nav-tab-btn" onclick="switchTab('icons-tab')">🕊️ Иконы</button>
-        <button class="nav-tab-btn" onclick="switchTab('signatures-tab')">✍️ Подписи</button>
+        <button class="nav-tab-btn active" onclick="switchTab('main-tree')">Ветка Вишня / Кочмола</button>
+        <button class="nav-tab-btn" onclick="switchTab('fedchenko-tree')">Ветка Федченко / Зинченко</button>
+        <button class="nav-tab-btn" onclick="switchTab('gritsay-tree')">Ветка Копиця</button>
+        <button class="nav-tab-btn" onclick="switchTab('icons-tab')">Иконы</button>
+        <button class="nav-tab-btn" onclick="switchTab('signatures-tab')">Подписи</button>
     </div>
 </div>
 
@@ -427,7 +413,7 @@
     <button class="btn-ctrl" onclick="resetView()" title="Центрировать">⟲</button>
 </div>
 
-<!-- ================= ВКЛАДКА 1: ОСНОВНОЕ ДРЕВО ================= -->
+<!-- ================= ВКЛАДКА 1: ОСНОВНОЕ ДРЕВО (ВИШНЯ / КОЧМОЛА) ================= -->
 <div class="tab-view active-view" id="view-main-tree">
     <div class="viewport-container" id="main-viewport">
         <div class="canvas-container" id="tree-canvas">
@@ -583,14 +569,14 @@
                                 <div class="doc-indicator">📜</div>
                                 <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                                 <div class="name-label">Феодор Харитонов Вишня</div>
-                                <div class="dates-label">1908 г.р.</div>
+                                <div class="dates-label">06.06.1908 г.</div>
                                 <div class="place-tag">с. Верхняя Сыроватка</div>
                             </div>
                             <div class="person-card liquid-glass female" id="card-antonina-haritonova" onclick="openPerson('antonina_haritonova')">
                                 <div class="doc-indicator">📜</div>
                                 <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                                 <div class="name-label">Антонина Харитонова Вишня</div>
-                                <div class="dates-label">1910 г.р.</div>
+                                <div class="dates-label">11.11.1910 г.</div>
                                 <div class="place-tag">с. Верхняя Сыроватка</div>
                             </div>
                         </div>
@@ -649,6 +635,14 @@
                                 <div class="name-label">Иван Семенович Вишня</div>
                                 <div class="dates-label" style="color: var(--male-color);">27.11.1928 г.</div>
                                 <div class="place-tag">Отец деда</div>
+                            </div>
+
+                            <div class="person-card liquid-glass female" id="card-polina-f-main" onclick="openPerson('polina_f')">
+                                <div class="doc-indicator">📜</div>
+                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                                <div class="name-label">Полина Евдокимовна Федченко</div>
+                                <div class="dates-label" style="color: var(--female-color);">20.01.1929 г.</div>
+                                <div class="place-tag">Мать деда</div>
                             </div>
                         </div>
                     </div>
@@ -744,14 +738,16 @@
             <div class="fedchenko-gen-row" style="gap: 260px;">
                 <div class="cards-cluster">
                     <div class="person-card liquid-glass male" id="card-f-aleksey-f" onclick="openPerson('aleksey_kirillov_f')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Алексей Кириллов Федченко</div>
                         <div class="dates-label">1855 г.р.</div>
                         <div class="place-tag">с. Малый Бобрик</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-f-paraskeva" onclick="openPerson('paraskeva_mikhaylova_f')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label">Параскева Михайлова</div>
+                        <div class="name-label">Параскева Михайловна Велитченкова</div>
                         <div class="dates-label">1859 г.р.</div>
                         <div class="place-tag">с. Малый Бобрик</div>
                     </div>
@@ -1045,7 +1041,202 @@
     </div>
 </div>
 
-<!-- ================= ВКЛАДКА 3: СЕМЕЙНЫЕ ИКОНЫ ================= -->
+<!-- ================= ВКЛАДКА 3: ВЕТКА ГРИЦАЙ / КОПИЦЯ ================= -->
+<div class="tab-view" id="view-gritsay-tree">
+    <div class="viewport-container" id="gritsay-viewport">
+        <div class="canvas-container" id="gritsay-canvas" style="min-width: 3500px; padding-top: 100px;">
+            <svg id="gritsay-tree-svg" class="tree-svg-layer"></svg>
+
+            <!-- Поколение I (Прадеды) -->
+            <div style="display: flex; justify-content: center; gap: 500px; margin-bottom: 80px;">
+                <!-- Прадеды по Копице -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-moisey" onclick="openPerson('moisey_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Моисей Васильев Копица</div>
+                        <div class="dates-label">Ум. 28.10.1925 г.</div>
+                        <div class="death-cause">Умер от тифа</div>
+                        <div class="place-tag">Прадед Веры</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-irina" onclick="openPerson('irina_ivkova')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Ирина Иванова Ивкова</div>
+                        <div class="dates-label">Брак 30.01.1881 г.</div>
+                        <div class="place-tag">Прабабушка Веры</div>
+                    </div>
+                </div>
+
+                <!-- Прадеды по Пидопригоре -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-ivan-p" onclick="openPerson('ivan_pidoprigora')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Иван Стефанов Пидопригора</div>
+                        <div class="dates-label">XIX век</div>
+                        <div class="place-tag">Прадед Веры</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-elena-p" onclick="openPerson('elena_pidoprigora')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Елена Петрова Пидопригора</div>
+                        <div class="dates-label">XIX век</div>
+                        <div class="place-tag">Прабабушка Веры</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Поколение II (Деды) -->
+            <div style="display: flex; justify-content: center; gap: 400px; margin-bottom: 80px;">
+                <!-- Родители Копиця -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-pavel-k" onclick="openPerson('pavel_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Павел Моисеев Копица</div>
+                        <div class="dates-label">Брак 25.01.1904 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-iustiniya" onclick="openPerson('iustiniya_khristoforova')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Иустиния Христофорова Тимошенкова</div>
+                        <div class="dates-label">Брак 25.01.1904 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                </div>
+
+                <!-- Родители Пидопригора -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-iakov-p" onclick="openPerson('iakov_pidoprigora')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Иаков Иванович Пидопригора</div>
+                        <div class="dates-label">07.10.1874 г.</div>
+                        <div class="place-tag">Отец Якилины</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Поколение III (Родители Владимира и Веры + Братья/Сестры) -->
+            <div style="display: flex; gap: 80px; justify-content: center; margin-bottom: 80px;">
+                
+                <!-- Линия Грицай -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-fedor-g" onclick="openPerson('fedor_gritsay_sn')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Федор Грицай</div>
+                        <div class="dates-label">ХХ век</div>
+                        <div class="place-tag">Отец Владимира</div>
+                    </div>
+                </div>
+
+                <!-- Дети Павла Копици -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-luka" onclick="openPerson('luka_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Лука Павлович Копиця</div>
+                        <div class="dates-label">17.10.1904 – 11.11.1904</div>
+                        <div class="death-cause">Умер от гриппа</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-evfimia" onclick="openPerson('evfimia_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Евфимия Павловна Копиця</div>
+                        <div class="dates-label">12.09.1905 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-aleksandra" onclick="openPerson('aleksandra_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Александра Павловна Копиця</div>
+                        <div class="dates-label">19.03.1907 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-maria" onclick="openPerson('maria_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Мария Павловна Копиця</div>
+                        <div class="dates-label">16.07.1910 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-evgenia" onclick="openPerson('evgenia_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Евгения Павловна Копиця</div>
+                        <div class="dates-label">23.12.1911 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    <div class="person-card liquid-glass male" id="card-g-ioann" onclick="openPerson('ioann_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Иоанн Павлович Копиця</div>
+                        <div class="dates-label">24.05.1913 г.</div>
+                        <div class="place-tag">с. Штеповка</div>
+                    </div>
+                    
+                    <!-- Федор Копиця смещен вправо, чтобы его связь с Якилиной не пересекала братьев/сестер -->
+                    <div class="person-card liquid-glass male" id="card-g-fedor-k" onclick="openPerson('fedor_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Федор Павлович Копиця</div>
+                        <div class="dates-label">07.02.1909 – 29.11.1944</div>
+                        <div class="death-cause">Погиб в бою (ВОВ)</div>
+                    </div>
+                </div>
+
+                <!-- Дочь Иакова -->
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass female" id="card-g-yakilina" onclick="openPerson('yakilina_pidoprigora')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Якилина Яколовна Пидопригора</div>
+                        <div class="dates-label">Мать Веры</div>
+                        <div class="place-tag">Линия Копиця</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Поколение IV (Владимир и Вера) -->
+            <div style="display: flex; gap: 40px; justify-content: center; margin-bottom: 100px; margin-left: 500px;">
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass male" id="card-g-vladimir" onclick="openPerson('vladimir_gritsay')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label" style="color: var(--male-color);">Владимир Федорович Грицай</div>
+                        <div class="dates-label">02.01.1928 г.</div>
+                        <div class="place-tag">Отец Тамары</div>
+                    </div>
+                    
+                    <div class="person-card liquid-glass female" id="card-g-vera" onclick="openPerson('vera_kopitsya')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label" style="color: var(--female-color);">Вера Федоровна Копиця</div>
+                        <div class="dates-label">20.01.1936 г.</div>
+                        <div class="place-tag">Мать Тамары</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Поколение V (Тамара) -->
+            <div style="display: flex; justify-content: center; margin-left: 500px;">
+                <div class="cards-cluster">
+                    <div class="person-card liquid-glass female" id="card-g-tamara" onclick="openPerson('tamara_gritsay')" style="box-shadow: 0 10px 40px rgba(192, 38, 211, 0.25);">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label" style="font-size: 15px; color: var(--female-color);">Тамара Владимировна Грицай</div>
+                        <div class="dates-label">Дочь</div>
+                        <div class="place-tag" style="font-weight: 700;">Хранительница Икон</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ================= ВКЛАДКА 4: СЕМЕЙНЫЕ ИКОНЫ ================= -->
 <div class="tab-view orthodox-theme" id="view-icons-tab">
     <div class="content-page-scroll">
         <div class="history-card-box">
@@ -1069,7 +1260,7 @@
     </div>
 </div>
 
-<!-- ================= ВКЛАДКА 4: ПОДПИСИ ПРЕДКОВ ================= -->
+<!-- ================= ВКЛАДКА 5: ПОДПИСИ ПРЕДКОВ ================= -->
 <div class="tab-view" id="view-signatures-tab">
     <div class="content-page-scroll">
         <div class="history-card-box liquid-glass" style="border-left-color: #3b82f6; width: 100%; max-width: 1000px; text-align: left; padding: 32px 40px; border-radius: 20px; background: rgba(255,255,255,0.4);">
@@ -1085,13 +1276,13 @@
             <div class="signature-card liquid-glass" onclick="openLightbox('fedor_kopica_1936.png', 'Подпись: Копица Федор Павлович (1936 г.)')">
                 <img src="fedor_kopica_1936.png" alt="Копица Федор Павлович" onerror="this.src='https://via.placeholder.com/350x150/cbd5e1/ffffff?text=fedor_kopica_1936.png'">
                 <div class="signature-name">Копица Федор Павлович</div>
-                <div class="signature-role">Архивная запись 1936 года</div>
+                <div class="signature-role">найдена в записи акта про рождение Веры Копиця (1936)</div>
             </div>
 
             <div class="signature-card liquid-glass" onclick="openLightbox('fedor_gricay.png', 'Подпись: Федор Грицай')">
                 <img src="fedor_gricay.png" alt="Федор Грицай" onerror="this.src='https://via.placeholder.com/350x150/cbd5e1/ffffff?text=fedor_gricay.png'">
                 <div class="signature-name">Федор Грицай</div>
-                <div class="signature-role">Личная подпись в актовой книге</div>
+                <div class="signature-role">найдена в записи акта про рождение Владимира Грицай (1928)</div>
             </div>
 
             <div class="signature-card liquid-glass" onclick="openLightbox('fedor_vishnya_podpis.png', 'Подпись: Феодор Вишня')">
@@ -1157,10 +1348,10 @@
 </div>
 
 <script>
-    // БАЗА ДАННЫХ ПЕРСОН
+    // БАЗА ДАННЫХ ПЕРСОН 
     const genealogyData = {
-        aleksey_kirillov_f: { name: "Алексей Кириллов Федченко", dates: "1855 г.р.", place: "С. Малий Бобрик", bio: "Прадед Полины Федченко. Муж Параскевы Михайловой (1859 г.р.). Отец Илариона Алексеева Федьченко.", status: "ok" },
-        paraskeva_mikhaylova_f: { name: "Параскева Михайлова", dates: "1859 г.р.", place: "С. Малий Бобрик", bio: "Прабабушка Полины Федченко. Супруга Алексея Кириллова Федченко. Мать Илариона Алексеева Федьченко.", status: "ok" },
+        aleksey_kirillov_f: { name: "Алексей Кириллов Федченко", dates: "1855 г.р.", place: "С. Малий Бобрик", bio: "Прадед Полины Федченко. Муж Параскевы Михайловны Велитченковой (1859 г.р.). Отец Илариона Алексеева Федьченко.", status: "ok" },
+        paraskeva_mikhaylova_f: { name: "Параскева Михайловна Велитченкова", dates: "1859 г.р.", place: "С. Малий Бобрик", bio: "Прабабушка Полины Федченко. Супруга Алексея Кириллова Федченко. Мать Илариона Алексеева Федьченко.", status: "ok" },
         aleksey_emelianov_z: { name: "Алексей Емелианов Зинченко", dates: "XIX век", place: "С. Малий Бобрик", bio: "Отец Анастасии Алексеевой Зинченко (жены Илариона Федченко). Родоначальник ветви Зинченко.", status: "ok" },
         iulianiya_karpova_z: { name: "Иулиания Карпова", dates: "XIX век", place: "С. Малий Бобрик", bio: "Мать Анастасии Алексеевой Зинченко и ее многочисленных братьев и сестер.", status: "ok" },
         ilarion_f: { name: "Иларион Алексеев Федьченко", dates: "28.03.1875 – 26.09.1917", place: "С. Малий Бобрик", bio: "Дед Полины Федченко. Сын Алексея Кириллова Федченко и Параскевы Михайловой. Венчался 25 апреля 1893 года с Анастасией Алексеевой Зиньченковой. Отец 9 детей.<br><br><b>Причина смерти:</b> умер 26 сентября 1917 года от рвоты.", status: "ok" },
@@ -1197,20 +1388,20 @@
         iakim_k: { name: "Иаким Филиппов Кочмола", dates: "1839 г.р. – 1889 г.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный.<br><br><b>Причина смерти:</b> в 1889 году его задавило землей.", status: "ok" },
         maria_e: { name: "Мария Ефимова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Супруга Иакима Филиппова Кочмолы. Мать большой семьи.", status: "ok" },
         sergey_g: { name: "Сергей Васильев Голуб", dates: "1846 г.р. – 02.02.1876 г.", place: "С. Верхняя Сыроватка / Хоружевка", bio: "Отец Мотроны Сергеевой Голубовой.<br><br><b>Причина смерти:</b> умер от простуды.", status: "ok" },
-        feodor_v: { name: "Феодор Гавриилов Вишня", dates: "~1860–1868 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный. Отец четверых сыновей: Харитона, Никифора, Димитрия и Семена.", status: "approx", note: "Год рождения установлен ориентировочно." },
+        feodor_v: { name: "Феодор Гавриилов Вишня", dates: "~1860–1868 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный. Отец четверых сыновей: Харитона, Никифора, Димитрия и Семена.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "approx", note: "Год рождения установлен ориентировочно." },
         anastasia_ch: { name: "Анастасия Феодотова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Жена Феодора Гавриилова Вишни. Мать Харитона, Семена, Никифора и Димитрия.", status: "ok" },
         andrey_k: { name: "Андрей Иакимов Кочмола", dates: "01.10.1861 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Филиппова Кочмолы и Марии Ефимовой.", status: "ok" },
         kirill_k: { name: "Кирилл Иакимов Кочмола", dates: "18.03.1865 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Кочмолы и Марии Ефимовой.", status: "ok" },
         evfrosinia_k: { name: "Евфросиния Иакимов Кочмола", dates: "19.01.1873 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима Кочмолы и Марии Ефимовой.", status: "ok" },
         epistimia_k: { name: "Епистимия Иакимова Кочмола", dates: "04.11.1875 – 18.07.1878", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима и Марии. Умерла 18 июля 1878 года в возрасте трех лет от скарлатины.", status: "ok" },
-        konstantin_k: { name: "Константин Иакимович Кочмола", dates: "20.05.1868 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима и Марии. 25 января 1887 года женился на 20-летней Мотроне Сергеевой Голубовой.", status: "ok" },
+        konstantin_k: { name: "Константин Иакимович Кочмола", dates: "20.05.1868 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима и Марии. 25 января 1887 года женился на 20-летней Мотроне Сергеевой Голубовой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
         motrona_g: { name: "Мотрона Сергеева Голубова", dates: "1867 г.р.", place: "С. Верхняя Сыроватка", bio: "Дочь Сергея Васильева Голуба (1846–1876). Вышла замуж в 20 лет 25 января 1887 года.", status: "ok" },
         hariton_v: { name: "Харитон Феодоров Вишня", dates: "01.06.1885 – 05.10.1922", place: "С. Верхняя Сыроватка", bio: "Брат Семена Вишни. Венчался в 1907 г. с Матроной Климовой Коваленко.<br><br><b>Причина смерти:</b> умер от горловой чахотки.", status: "ok" },
         matrona_kovalenko: { name: "Матрона Климова Коваленко", dates: "1885 г.р.", place: "С. Верхняя Сыроватка", bio: "Жена Харитона Феодорова Вишни. Венчались в 1907 году.", status: "ok" },
         nikifor_v: { name: "Никифор Вишня Феодоров", dates: "01.02.1897 г.", place: "С. Верхняя Сыроватка", bio: "Брат Семена и Харитона. Крестьянин, православный.", status: "ok" },
         dimitriy_v: { name: "Димитрий Вишня Феодоров", dates: "03.06.1900 г.", place: "С. Верхняя Сыроватка", bio: "Брат Семена, Никифора и Харитона.", status: "ok" },
-        semen_v: { name: "Семен Феодоров Вишня", dates: "1901 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, чернорабочий. Муж Феодосии Константиновны Кочмолы. Брак заключен в 1919 году.", status: "ok" },
-        fedosia_k: { name: "Феодосия Константиновна Кочмола", dates: "29.05.1899 г.", place: "С. Верхняя Сыроватка", bio: "Родилась 29 мая 1899 года. Дочь Константина Кочмолы и Мотроны Голубовой. Супруга Семена Вишни.", status: "ok" },
+        semen_v: { name: "Семен Феодоров Вишня", dates: "1901 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, чернорабочий. Муж Феодосии Константиновны Кочмолы. Брак заключен в 1919 году.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1931 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
+        fedosia_k: { name: "Феодосия Константиновна Кочмола", dates: "29.05.1899 г.", place: "С. Верхняя Сыроватка", bio: "Родилась 29 мая 1899 года. Дочь Константина Кочмолы и Мотроны Голубовой. Супруга Семена Вишни.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с мужем и Полиной Федченко.", status: "ok" },
         dimitriy_k: { name: "Димитрий Константинов Кочмола", dates: "26.10.1887 г.", place: "С. Верхняя Сыроватка", bio: "Старший сын Константина Иакимовича Кочмолы и Мотроны Сергеевны Голубовой. Венчался в 1907 году с Пелагией Данииловой Пархоменко.", status: "ok" },
         pelagiya_p: { name: "Пелагия Даниилова Пархоменко", dates: "1889 г.р.", place: "С. Верхняя Сыроватка", bio: "Жена Димитрия Константиновича Кочмолы.", status: "ok" },
         daniil_k: { name: "Даниил Димитриев Кочмола", dates: "1908 г.р.", place: "С. Верхняя Сыроватка", bio: "Сын Димитрия Константиновича Кочмолы и Пелагии Данииловой Пархоменко. Старший брат Романа.", status: "ok" },
@@ -1218,19 +1409,41 @@
         maria_k: { name: "Мария Константинова Кочмола", dates: "19.01.1892 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Константина и Мотроны Кочмола.", status: "ok" },
         ioann_k: { name: "Иоанн Константинов Кочмола", dates: "03.10.1894 г.", place: "С. Верхняя Сыроватка", bio: "Сын Константина и Мотроны Кочмола.", status: "ok" },
         mark_k: { name: "Марк Константинов Кочмола", dates: "29.03.1896 – 10.12.1897", place: "С. Верхняя Сыроватка", bio: "Сын Константина Иакимовича Кочмолы.<br><br><b>Причина смерти:</b> «от зубов».", status: "ok" },
-        feodor_haritonov: { name: "Феодор Харитонов Вишня", dates: "1908 г.р.", place: "С. Верхняя Сыроватка", bio: "Сын Харитона Феодорова Вишни и Матроны Климовой Коваленко.", status: "ok" },
-        antonina_haritonova: { name: "Антонина Харитонова Вишня", dates: "1910 г.р.", place: "С. Верхняя Сыроватка", bio: "Дочь Харитона Феодорова Вишни.", status: "ok" },
+        feodor_haritonov: { name: "Феодор Харитонов Вишня", dates: "06.06.1908 г.", place: "С. Верхняя Сыроватка", bio: "Сын Харитона Феодорова Вишни и Матроны Климовой Коваленко.", status: "ok" },
+        antonina_haritonova: { name: "Антонина Харитонова Вишня", dates: "11.11.1910 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Харитона Феодорова Вишни.", status: "ok" },
         nikolay_v: { name: "Николай Семенов Вишня", dates: "22.05.1920 г.", place: "С. Верхняя Сыроватка", bio: "Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы. Первый ребенок в семье.", status: "ok" },
         mariya_v: { name: "Мария Семенова Вишня", dates: "09.12.1922 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Семена Феодорова Вишни и Феодосии Константиновны Кочмолы. Второй ребенок в семье.", status: "ok" },
         anna_v: { name: "Анна Семенова Вишня", dates: "07.02.1924 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.", status: "ok" },
-        ivan_v: { name: "Иван Семенович Вишня", dates: "27.11.1928 г.", place: "С. Верхняя Сыроватка", bio: "Отец ДЕДЫ. Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.<br><br><b>Свидетельство о рождении:</b> родился 27 ноября 1928 года в с. Верхняя Сыроватка.<br><b>Брак:</b> 28 февраля 1957 года вступил в брак с Полиной Евдокимовной Федченко.", status: "ok" },
-        polina_f: { name: "Полина Евдокимовна Федченко", dates: "20.01.1929 г.", place: "С. Малий Бобрик", bio: "Супруга Ивана Семеновича Вишни. Родилась 20 января 1929 года в селе Малый Бобрик.<br><br><b>Брак:</b> 28 февраля 1957 года с Иваном Семеновичем Вишней. Мать ДЕДЫ.", status: "ok" },
-        ded_yura: { name: "ДЕДА", dates: "Поколение V", place: "С. Верхняя Сыроватка / Малый Бобрик", bio: "Сын Ивана Семеновича Вишни и Полины Евдокимовны Федченко. Главная объединяющая фигура обоих родов.", status: "ok" }
+        ivan_v: { name: "Иван Семенович Вишня", dates: "27.11.1928 г.", place: "С. Верхняя Сыроватка", bio: "Отец ДЕДЫ. Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.<br><br><b>Свидетельство о рождении:</b> родился 27 ноября 1928 года в с. Верхняя Сыроватка.<br><b>Брак:</b> 28 февраля 1957 года вступил в брак с Полиной Евдокимовной Федченко.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с женой Полиной и матерью Феодосией.", status: "ok" },
+        polina_f: { name: "Полина Евдокимовна Федченко", dates: "20.01.1929 г.", place: "С. Малий Бобрик", bio: "Супруга Ивана Семеновича Вишни. Родилась 20 января 1929 года в селе Малый Бобрик.<br><br><b>Брак:</b> 28 февраля 1957 года с Иваном Семеновичем Вишней. Мать ДЕДЫ.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с мужем и Феодосией.", status: "ok" },
+        ded_yura: { name: "ДЕДА", dates: "Поколение V", place: "С. Верхняя Сыроватка / Малый Бобрик", bio: "Сын Ивана Семеновича Вишни и Полины Евдокимовны Федченко. Главная объединяющая фигура обоих родов.", status: "ok" },
+        
+        // НОВЫЕ ПЕРСОНЫ (ГРИЦАЙ / КОПИЦЯ)
+        moisey_kopitsya: { name: "Моисей Васильев Копица", dates: "Ум. 28.10.1925 г.", place: "с. Штеповка", bio: "Отец Павла Моисеева Копицы.<br><br><b>Брак:</b> 30 января 1881 года обвенчался с Ириной Ивановой Ивковой.<br><br><b>Причина смерти:</b> умер 28 октября 1925 года от тифа.", status: "ok" },
+        irina_ivkova: { name: "Ирина Иванова Ивкова", dates: "Брак 30.01.1881 г.", place: "с. Штеповка", bio: "Супруга Моисея Васильева Копицы. Обвенчались 30 января 1881 года. Мать Павла Моисеева Копицы.", status: "ok" },
+        pavel_kopitsya: { name: "Павел Моисеев Копица", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Сын Моисея Васильева Копицы и Ирины Ивановой Ивковой. Отец большого семейства Копиця.<br><br><b>Брак:</b> 25 января 1904 года обвенчался с Иустинией Христофоровой Тимошенковой.", status: "ok" },
+        iustiniya_khristoforova: { name: "Иустиния Христофорова Тимошенкова", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Жена Павла Моисеева Копицы. Обвенчались 25 января 1904 года. Мать Луки, Евфимии, Александры, Марии, Евгении, Иоанна и Федора.", status: "ok" },
+        luka_kopitsya: { name: "Лука Павлович Копиця", dates: "17.10.1904 – 11.11.1904", place: "с. Штеповка", bio: "Старший брат Федора Павловича Копиця.<br><br><b>Причина смерти:</b> умер от гриппа (прожил меньше месяца).", status: "ok" },
+        evfimia_kopitsya: { name: "Евфимия Павловна Копиця", dates: "12.09.1905 г.", place: "с. Штеповка", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
+        aleksandra_kopitsya: { name: "Александра Павловна Копиця", dates: "19.03.1907 г.", place: "с. Штеповка", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
+        maria_kopitsya: { name: "Мария Павловна Копиця", dates: "16.07.1910 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
+        evgenia_kopitsya: { name: "Евгения Павловна Копиця", dates: "23.12.1911 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
+        ioann_kopitsya: { name: "Иоанн Павлович Копиця", dates: "24.05.1913 г.", place: "с. Штеповка", bio: "Младший брат Федора Павловича Копиця.", status: "ok" },
+        ivan_pidoprigora: { name: "Иван Стефанов Пидопригора", dates: "XIX век", place: "Неизвестно", bio: "Отец Иакова Ивановича Пидопригоры.", status: "ok" },
+        elena_pidoprigora: { name: "Елена Петрова Пидопригора", dates: "XIX век", place: "Неизвестно", bio: "Мать Иакова Ивановича Пидопригоры.", status: "ok" },
+        iakov_pidoprigora: { name: "Иаков Иванович Пидопригора", dates: "07.10.1874 г.", place: "Неизвестно", bio: "Отец Якилины Яколовны. Сын Ивана Стефанова и Елены Петровой Пидопригоры.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1931 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
+        fedor_gritsay_sn: { name: "Федор Грицай", dates: "ХХ век", place: "Неизвестно", bio: "Отец Владимира Федоровича Грицай. Его подпись фигурирует в архивной записи о рождении сына.", status: "ok" },
+        fedor_kopitsya: { name: "Федор Павлович Копиця", dates: "07.02.1909 – 29.11.1944", place: "Сумская обл. / Погиб: Чехословакия", bio: "Отец Веры Федоровны Копиця. Супруг Якилины Яколовны Пидопригоры.<br><br><b>Участие в Великой Отечественной войне:</b><br>Призван в 1944 году Погребищенским РВК (Винницкая обл.). Служил в звании <b>гвардии красноармейца</b> в 203-м гвардейском стрелковом полку (70-я гв. стрелковая дивизия).<br><br><b>Причина выбытия:</b> убит в бою 29 ноября 1944 года.<br><b>Первичное место захоронения:</b> Чехословакия, Стропковский р-н, западнее с. Белеевце, южный склон высоты 577.", status: "ok" },
+        yakilina_pidoprigora: { name: "Якилина Яколовна Пидопригора", dates: "ХХ век", place: "Неизвестно", bio: "Мать Веры Федоровны Копиця. Супруга Федора Павловича Копиця. Дочь Иакова Ивановича Пидопригоры.", status: "ok" },
+        vladimir_gritsay: { name: "Владимир Федорович Грицай", dates: "02.01.1928 г.", place: "Неизвестно", bio: "Отец Тамары Владимировны Грицай. Сын Федора Грицая.", status: "ok" },
+        vera_kopitsya: { name: "Вера Федоровна Копиця", dates: "20.01.1936 г.", place: "Неизвестно", bio: "Мать Тамары Владимировны Грицай. Дочь Федора Павловича Копиця и Якилины Яколовны Пидопригоры.", status: "ok" },
+        tamara_gritsay: { name: "Тамара Владимировна Грицай", dates: "Поколение III", place: "Неизвестно", bio: "Дочь Владимира Федоровича Грицай и Веры Федоровны Копиця. Хранительница священных семейных икон, которыми её благословила Феодосия Константиновна Кочмола.", status: "ok" }
     };
 
     // РЕЕСТР АРХИВНЫХ ДОКУМЕНТОВ
     const archiveDocuments = [
         // ЗИНЧЕНКО / ФЕДЧЕНКО
+        { id: "doc_aleksei_paraskeva_marriage_1874", title: "Брак Алексея Федьченко и Параскевы Велитченковой (1874 г.)", image: "paraskeva+aleksei_1874.png", peopleRoles: { "aleksey_kirillov_f": "Жених", "paraskeva_mikhaylova_f": "Невеста" } },
         { id: "doc_ilarion_birth_1875", title: "Рождение Илариона Федьченко (28 марта 1875 г.)", image: "ilarion_1875.png", peopleRoles: { "ilarion_f": "Ребенок", "aleksey_kirillov_f": "Отец", "paraskeva_mikhaylova_f": "Мать" } },
         { id: "doc_ilarion_marriage_1893", title: "Брак Илариона и Анастасии (25 апреля 1893 г.)", image: "svadba_ilariona+anastasii.png", peopleRoles: { "ilarion_f": "Жених", "anastasia_aleksieva_f": "Невеста" } },
         { id: "doc_marfa_birth_1875", title: "Рождение Марфы Зинченко (4 июля 1875 г.)", image: "marfa_1875.png", peopleRoles: { "marfa_z": "Ребенок", "aleksey_emelianov_z": "Отец", "iulianiya_karpova_z": "Мать" } },
@@ -1300,7 +1513,38 @@
         { id: "doc_hariton_death_1922", title: "Смерть Харитона (5 октября 1922 г.)", image: "haritron_smert_1922.jpg", peopleRoles: { "hariton_v": "Умерший" } },
         { id: "doc_nikolay_birth_1920", title: "Рождение Николая (22 мая 1920 г.)", image: "nikolay_1920.png", peopleRoles: { "nikolay_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } },
         { id: "doc_mariya_birth_1922", title: "Рождение Марии (9 декабря 1922 г.)", image: "mariya_1922.jpg", peopleRoles: { "mariya_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } },
-        { id: "doc_anna_birth_1924", title: "Рождение Анны (7 февраля 1924 г.)", image: "anna1924.png", peopleRoles: { "anna_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } }
+        { id: "doc_anna_birth_1924", title: "Рождение Анны (7 февраля 1924 г.)", image: "anna1924.png", peopleRoles: { "anna_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } },
+
+        // ГРИЦАЙ / КОПИЦЯ
+        { id: "doc_moisei_irina_marriage_1881", title: "Брак Моисея Копицы и Ирины Ивковой (30 января 1881 г.)", image: "Moisei+irina_1881.png", peopleRoles: { "moisey_kopitsya": "Жених", "irina_ivkova": "Невеста" } },
+        { id: "doc_moisei_death_1925", title: "Смерть Моисея Копицы (28 октября 1925 г.)", image: "Moisei_smert_1915.png", peopleRoles: { "moisey_kopitsya": "Умерший" } },
+        { id: "doc_pavel_iustinia_marriage_1904", title: "Брак Павла Копицы и Иустинии Тимошенковой (25 января 1904 г.)", image: "Pavel+iustinia_1904.png", peopleRoles: { "pavel_kopitsya": "Жених", "iustiniya_khristoforova": "Невеста" } },
+        { id: "doc_iakov_birth_1874", title: "Рождение Иакова Пидопригоры (1874 г.)", image: "Iakov_Pidoprigora_1874.png", peopleRoles: { "iakov_pidoprigora": "Ребенок", "ivan_pidoprigora": "Отец", "elena_pidoprigora": "Мать" } },
+        { id: "doc_repr_iakov_p", title: "Запись об осуждении (1931) - ст. 54-10 КК УСРР", image: "Pidoprigora_Yakiv_osuzhden_1931.png", peopleRoles: { "iakov_pidoprigora": "Осужден" } },
+        
+        { id: "doc_aleksandra_k_birth", title: "Рождение Александры Копици (1907)", image: "Aleksandra_1907.png", peopleRoles: { "aleksandra_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_evgenia_k_birth", title: "Рождение Евгении Копици (1911)", image: "Evgenia_1911.png", peopleRoles: { "evgenia_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_maria_k_birth", title: "Рождение Марии Копици (1910)", image: "Maria_1910.png", peopleRoles: { "maria_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_ioan_k_birth", title: "Рождение Иоанна Копици (1913)", image: "Ioan_1913.png", peopleRoles: { "ioann_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_evfimia_k_birth", title: "Рождение Евфимии Копици (1905)", image: "Evfimia_1905.png", peopleRoles: { "evfimia_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_luka_k_birth", title: "Рождение Луки Копици (1904)", image: "Luka_1904.png", peopleRoles: { "luka_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_luka_k_death", title: "Смерть Луки Копици (1904)", image: "Luka_smert_1904.png", peopleRoles: { "luka_kopitsya": "Умерший" } },
+
+        { id: "doc_fedor_k_birth_1909", title: "Рождение Федора Копици (7 февраля 1909 г.)", image: "Fedor_kopica_1909.png", peopleRoles: { "fedor_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
+        { id: "doc_fedor_k_poterya1", title: "Донесение о безвозвратных потерях (29.11.1944)", image: "Fedor_poterya_1944.png", peopleRoles: { "fedor_kopitsya": "Погибший" } },
+        { id: "doc_fedor_k_poterya2", title: "Уточняющее донесение о потерях", image: "Fedor_poterya_2_1944.png", peopleRoles: { "fedor_kopitsya": "Погибший" } },
+        { id: "doc_fedor_k_boevoi", title: "Боевой путь Федора Копици", image: "Boevoi_put_fedor.png", peopleRoles: { "fedor_kopitsya": "Участник ВОВ" } },
+        { id: "doc_fedor_kopitsya_sign", title: "Запись акта о рождении Веры Копиця (1936)", image: "fedor_kopica_1936.png", peopleRoles: { "fedor_kopitsya": "Отец", "vera_kopitsya": "Ребенок", "yakilina_pidoprigora": "Мать" } },
+        { id: "doc_fedor_gritsay_sign", title: "Запись акта о рождении Владимира Грицай (1928)", image: "fedor_gricay.png", peopleRoles: { "fedor_gritsay_sn": "Отец", "vladimir_gritsay": "Ребенок" } },
+        
+        { id: "doc_vladimir_birth_1928", title: "Запись о рождении Владимира (1928 г.)", image: "Vladimir_1928.jpg", peopleRoles: { "vladimir_gritsay": "Свидетельство" } },
+        { id: "doc_vera_birth_1936", title: "Запись о рождении Веры (1936 г.)", image: "Vera_1936.jpg", peopleRoles: { "vera_kopitsya": "Свидетельство" } },
+
+        // НОВЫЕ ДОКУМЕНТЫ: МОГИЛА И РЕПРЕССИИ
+        { id: "doc_mogila", title: "Семейное захоронение (Могила)", image: "Mogila.png", peopleRoles: { "ivan_v": "Похоронен", "polina_f": "Похоронена", "fedosia_k": "Похоронена" } },
+        { id: "doc_repr_kochmola", title: "Запись об осуждении (1930) - ст. 54-10 КК УСРР", image: "Kochmola_konstantin_osuzhden_1930.png", peopleRoles: { "konstantin_k": "Осужден" } },
+        { id: "doc_repr_fedor_v", title: "Запись об осуждении (1930) - ст. 54-10 КК УСРР", image: "Fedor_vishnya_osuzhden_1930.png", peopleRoles: { "feodor_v": "Осужден" } },
+        { id: "doc_repr_semen_v", title: "Запись об осуждении (1931) - ст. 54-10 КК УСРР", image: "Semen_vishnya_osuzhden_1931.png", peopleRoles: { "semen_v": "Осужден" } }
     ];
 
     let activePersonId = null;
@@ -1315,8 +1559,11 @@
         event.target.classList.add("active");
 
         const controls = document.getElementById("tree-controls");
-        if (tabId === "main-tree" || tabId === "fedchenko-tree") {
-            activeCanvasType = tabId === "main-tree" ? 'main' : 'fedchenko';
+        if (tabId === "main-tree" || tabId === "fedchenko-tree" || tabId === "gritsay-tree") {
+            if (tabId === "main-tree") activeCanvasType = 'main';
+            else if (tabId === "fedchenko-tree") activeCanvasType = 'fedchenko';
+            else if (tabId === "gritsay-tree") activeCanvasType = 'gritsay';
+            
             if (controls) controls.style.display = "flex";
             resetView();
         } else {
@@ -1418,7 +1665,6 @@
         if (e.target === lbModal || e.target.id === 'lightbox-wrapper') closeLightbox();
     });
 
-    // Закрытие Lightbox по тапу (мобилки)
     lbModal.addEventListener('touchstart', (e) => {
         if (e.target === lbModal || e.target.id === 'lightbox-wrapper') closeLightbox();
     });
@@ -1439,7 +1685,6 @@
         lbImg.style.transform = `translate(${lbPanX}px, ${lbPanY}px) scale(${lbScale})`;
     }
 
-    // Зум колесиком (Десктоп)
     lbImg.addEventListener('wheel', (e) => {
         e.preventDefault();
         const delta = e.deltaY < 0 ? 0.15 : -0.15;
@@ -1447,7 +1692,6 @@
         updateLbTransform();
     });
 
-    // Drag (Десктоп)
     lbImg.addEventListener('mousedown', (e) => {
         e.preventDefault(); 
         isDraggingLb = true;
@@ -1470,7 +1714,6 @@
         }
     });
 
-    // Touch (Мобилка) - Lightbox
     lbImg.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
             isDraggingLb = true;
@@ -1504,7 +1747,7 @@
     });
 
     // ==============================================================
-    // ДИНАМИЧЕСКИЙ ДВИЖОК ВЕТОК (SVG ДЛЯ ОБОИХ ДРЕВ)
+    // ДИНАМИЧЕСКИЙ ДВИЖОК ВЕТОК (SVG ДЛЯ ВСЕХ ДРЕВ)
     // ==============================================================
     function getCardAnchor(id, canvasEl) {
         const el = document.getElementById(id);
@@ -1512,7 +1755,10 @@
         const cRect = canvasEl.getBoundingClientRect();
         const eRect = el.getBoundingClientRect();
 
-        const currentScale = (activeCanvasType === 'main') ? zoomScale : fedZoomScale;
+        let currentScale = zoomScale;
+        if (activeCanvasType === 'fedchenko') currentScale = fedZoomScale;
+        else if (activeCanvasType === 'gritsay') currentScale = griZoomScale;
+
         const left = (eRect.left - cRect.left) / currentScale;
         const top = (eRect.top - cRect.top) / currentScale;
         const width = eRect.width / currentScale;
@@ -1525,6 +1771,7 @@
     }
 
     function drawAllConnections() {
+        // --- ДЕРЕВО ВИШНЯ / КОЧМОЛА ---
         try {
             const svg = document.getElementById("tree-svg");
             const canvas = document.getElementById("tree-canvas");
@@ -1582,10 +1829,12 @@
                 drawCoupleAndChildren('card-feodor', 'card-anastasia', ['card-hariton', 'card-nikifor', 'card-dimitriy-v', 'card-semen']);
                 drawCoupleAndChildren('card-hariton', 'card-matrona-kovalenko', ['card-feodor-haritonov', 'card-antonina-haritonova']);
                 drawCoupleAndChildren('card-semen', 'card-fedosia-k', ['card-nikolay-v', 'card-mariya-v', 'card-anna-v', 'card-ivan-v']);
-                drawCoupleAndChildren('card-ivan-v', 'card-polina-f', ['card-ded-yura']);
+                
+                drawCoupleAndChildren('card-ivan-v', 'card-polina-f-main', ['card-ded-yura']);
             }
         } catch (e) { console.error(e); }
 
+        // --- ДЕРЕВО ФЕДЧЕНКО / ЗИНЧЕНКО ---
         try {
             const fSvg = document.getElementById("fedchenko-tree-svg");
             const fCanvas = document.getElementById("fedchenko-canvas");
@@ -1640,6 +1889,73 @@
                 drawFCoupleAndChildren('card-f-ivan', 'card-f-polina', ['card-f-deda']);
             }
         } catch (e) { console.error(e); }
+
+        // --- ДЕРЕВО ГРИЦАЙ / КОПИЦЯ ---
+        try {
+            const gSvg = document.getElementById("gritsay-tree-svg");
+            const gCanvas = document.getElementById("gritsay-canvas");
+            if (gSvg && gCanvas) {
+                gSvg.setAttribute("width", gCanvas.scrollWidth);
+                gSvg.setAttribute("height", gCanvas.scrollHeight);
+                gSvg.style.width = gCanvas.scrollWidth + "px";
+                gSvg.style.height = gCanvas.scrollHeight + "px";
+                while (gSvg.firstChild) gSvg.removeChild(gSvg.firstChild);
+
+                function addGPath(d) {
+                    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                    path.setAttribute("d", d);
+                    gSvg.appendChild(path);
+                }
+
+                function drawGCoupleAndChildren(husbandId, wifeId, childrenIds) {
+                    const h = getCardAnchor(husbandId, gCanvas);
+                    const w = getCardAnchor(wifeId, gCanvas);
+                    if (!h || !w) return;
+                    const bracketY = Math.max(h.bottom.y, w.bottom.y) + 16;
+                    addGPath(`M ${h.bottom.x} ${h.bottom.y} V ${bracketY} H ${w.bottom.x} V ${w.bottom.y}`);
+                    if (!childrenIds || childrenIds.length === 0) return;
+                    const midX = (h.bottom.x + w.bottom.x) / 2;
+                    const midY = bracketY;
+                    const cAnchors = childrenIds.map(id => getCardAnchor(id, gCanvas)).filter(a => a !== null);
+                    if (cAnchors.length === 0) return;
+                    const minChildY = Math.min(...cAnchors.map(c => c.top.y));
+                    const busY = midY + (minChildY - midY) / 2;
+                    addGPath(`M ${midX} ${midY} V ${busY}`);
+                    const xs = cAnchors.map(c => c.top.x);
+                    xs.push(midX);
+                    const minX = Math.min(...xs);
+                    const maxX = Math.max(...xs);
+                    addGPath(`M ${minX} ${busY} H ${maxX}`);
+                    cAnchors.forEach(c => addGPath(`M ${c.top.x} ${busY} V ${c.top.y}`));
+                }
+
+                function drawGParentToChild(parentId, childId) {
+                    const p = getCardAnchor(parentId, gCanvas);
+                    const c = getCardAnchor(childId, gCanvas);
+                    if (!p || !c) return;
+                    if (Math.abs(p.bottom.x - c.top.x) < 2) {
+                        addGPath(`M ${p.bottom.x} ${p.bottom.y} V ${c.top.y}`);
+                    } else {
+                        const midY = p.bottom.y + (c.top.y - p.bottom.y) / 2;
+                        addGPath(`M ${p.bottom.x} ${p.bottom.y} V ${midY} H ${c.top.x} V ${c.top.y}`);
+                    }
+                }
+
+                drawGCoupleAndChildren('card-g-moisey', 'card-g-irina', ['card-g-pavel-k']);
+                drawGCoupleAndChildren('card-g-ivan-p', 'card-g-elena-p', ['card-g-iakov-p']);
+                
+                drawGParentToChild('card-g-iakov-p', 'card-g-yakilina');
+                drawGParentToChild('card-g-fedor-g', 'card-g-vladimir');
+                
+                drawGCoupleAndChildren('card-g-pavel-k', 'card-g-iustiniya', [
+                    'card-g-luka', 'card-g-evfimia', 'card-g-aleksandra', 
+                    'card-g-maria', 'card-g-evgenia', 'card-g-ioann', 'card-g-fedor-k'
+                ]);
+
+                drawGCoupleAndChildren('card-g-fedor-k', 'card-g-yakilina', ['card-g-vera']);
+                drawGCoupleAndChildren('card-g-vladimir', 'card-g-vera', ['card-g-tamara']);
+            }
+        } catch (e) { console.error(e); }
     }
 
     // ==============================================================
@@ -1653,15 +1969,19 @@
     let fedOffsetX = 0;
     let fedOffsetY = 80;
 
+    let griZoomScale = 0.8;
+    let griOffsetX = 0;
+    let griOffsetY = 80;
+
     let isDraggingCanvas = false;
     let didDrag = false;
     let startX = 0, startY = 0;
 
-    // Переменные для Pinch-to-zoom на мобильных (дерево)
     let initialPinchDistTree = null;
 
     const canvas = document.getElementById("tree-canvas");
     const fedCanvas = document.getElementById("fedchenko-canvas");
+    const griCanvas = document.getElementById("gritsay-canvas");
 
     window.addEventListener("dragstart", e => e.preventDefault());
 
@@ -1670,6 +1990,8 @@
             canvas.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${zoomScale})`;
         } else if (activeCanvasType === 'fedchenko' && fedCanvas) {
             fedCanvas.style.transform = `translate(${fedOffsetX}px, ${fedOffsetY}px) scale(${fedZoomScale})`;
+        } else if (activeCanvasType === 'gritsay' && griCanvas) {
+            griCanvas.style.transform = `translate(${griOffsetX}px, ${griOffsetY}px) scale(${griZoomScale})`;
         }
     }
 
@@ -1677,15 +1999,20 @@
         const isMobile = window.innerWidth <= 768;
 
         if (activeCanvasType === 'main') {
-            zoomScale = isMobile ? 0.35 : 0.75; // Для телефона стартуем мельче
+            zoomScale = isMobile ? 0.35 : 0.75; 
             const canvasWidth = 3300;
             offsetX = (window.innerWidth - canvasWidth * zoomScale) / 2;
             offsetY = isMobile ? 120 : 60;
-        } else {
+        } else if (activeCanvasType === 'fedchenko') {
             fedZoomScale = isMobile ? 0.25 : 0.65;
             const canvasWidth = 4700;
             fedOffsetX = (window.innerWidth - canvasWidth * fedZoomScale) / 2;
             fedOffsetY = isMobile ? 150 : 70;
+        } else if (activeCanvasType === 'gritsay') {
+            griZoomScale = isMobile ? 0.45 : 0.8;
+            const canvasWidth = 2500;
+            griOffsetX = (window.innerWidth - canvasWidth * griZoomScale) / 2;
+            griOffsetY = isMobile ? 100 : 70;
         }
         applyTransform();
         setTimeout(drawAllConnections, 40);
@@ -1701,7 +2028,7 @@
             zoomScale = newScale;
             offsetX = anchorX - canvasX * newScale;
             offsetY = anchorY - canvasY * newScale;
-        } else {
+        } else if (activeCanvasType === 'fedchenko') {
             const oldScale = fedZoomScale;
             const newScale = Math.min(Math.max(0.15, fedZoomScale * factor), 3.0);
             if (newScale === oldScale) return;
@@ -1710,11 +2037,19 @@
             fedZoomScale = newScale;
             fedOffsetX = anchorX - canvasX * newScale;
             fedOffsetY = anchorY - canvasY * newScale;
+        } else if (activeCanvasType === 'gritsay') {
+            const oldScale = griZoomScale;
+            const newScale = Math.min(Math.max(0.15, griZoomScale * factor), 3.0);
+            if (newScale === oldScale) return;
+            const canvasX = (anchorX - griOffsetX) / oldScale;
+            const canvasY = (anchorY - griOffsetY) / oldScale;
+            griZoomScale = newScale;
+            griOffsetX = anchorX - canvasX * newScale;
+            griOffsetY = anchorY - canvasY * newScale;
         }
         applyTransform();
     }
 
-    // Десктопная мышка
     window.addEventListener("wheel", function(e) {
         if (e.target.closest(".sidebar, #lightbox-modal, #view-icons-tab, #view-signatures-tab, .content-page-scroll")) return;
         e.preventDefault();
@@ -1743,25 +2078,33 @@
             didDrag = true;
             if (activeCanvasType === 'main') {
                 offsetX += dx; offsetY += dy;
-            } else {
+            } else if (activeCanvasType === 'fedchenko') {
                 fedOffsetX += dx; fedOffsetY += dy;
+            } else if (activeCanvasType === 'gritsay') {
+                griOffsetX += dx; griOffsetY += dy;
             }
             startX = e.clientX;
             startY = e.clientY;
             applyTransform();
-            const vp = (activeCanvasType === 'main') ? document.getElementById("main-viewport") : document.getElementById("fedchenko-viewport");
-            if (vp) vp.style.cursor = "grabbing";
+            
+            const vps = ["main-viewport", "fedchenko-viewport", "gritsay-viewport"];
+            vps.forEach(id => {
+                const vp = document.getElementById(id);
+                if(vp) vp.style.cursor = "grabbing";
+            });
         }
     });
 
     window.addEventListener("mouseup", function() {
         isDraggingCanvas = false;
-        const vp = (activeCanvasType === 'main') ? document.getElementById("main-viewport") : document.getElementById("fedchenko-viewport");
-        if (vp) vp.style.cursor = "grab";
+        const vps = ["main-viewport", "fedchenko-viewport", "gritsay-viewport"];
+        vps.forEach(id => {
+            const vp = document.getElementById(id);
+            if(vp) vp.style.cursor = "grab";
+        });
         setTimeout(() => { didDrag = false; }, 100);
     });
 
-    // МОБИЛЬНЫЕ ЖЕСТЫ ДЛЯ ДЕРЕВА (Touch Events)
     window.addEventListener("touchstart", function(e) {
         if (e.target.closest(".sidebar, .controls, .top-bar, .person-card, #lightbox-modal, #view-icons-tab, #view-signatures-tab, .content-page-scroll")) return;
         
@@ -1771,7 +2114,7 @@
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
         } else if (e.touches.length === 2) {
-            isDraggingCanvas = false; // Отключаем панорамирование при зуме
+            isDraggingCanvas = false;
             initialPinchDistTree = Math.hypot(
                 e.touches[0].clientX - e.touches[1].clientX,
                 e.touches[0].clientY - e.touches[1].clientY
@@ -1781,7 +2124,7 @@
 
     window.addEventListener("touchmove", function(e) {
         if (e.target.closest(".sidebar, .controls, .top-bar, .person-card, #lightbox-modal, #view-icons-tab, #view-signatures-tab, .content-page-scroll")) return;
-        e.preventDefault(); // Запрещаем скролл страницы браузером
+        e.preventDefault(); 
 
         if (e.touches.length === 1 && isDraggingCanvas) {
             const dx = e.touches[0].clientX - startX;
@@ -1791,8 +2134,10 @@
                 didDrag = true;
                 if (activeCanvasType === 'main') {
                     offsetX += dx; offsetY += dy;
-                } else {
+                } else if (activeCanvasType === 'fedchenko') {
                     fedOffsetX += dx; fedOffsetY += dy;
+                } else if (activeCanvasType === 'gritsay') {
+                    griOffsetX += dx; griOffsetY += dy;
                 }
                 startX = e.touches[0].clientX;
                 startY = e.touches[0].clientY;
