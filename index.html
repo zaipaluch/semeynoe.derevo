@@ -401,7 +401,7 @@
     <div class="nav-tabs">
         <button class="nav-tab-btn active" onclick="switchTab('main-tree')">Ветка Вишня / Кочмола</button>
         <button class="nav-tab-btn" onclick="switchTab('fedchenko-tree')">Ветка Федченко / Зинченко</button>
-        <button class="nav-tab-btn" onclick="switchTab('gritsay-tree')">Ветка Копиця</button>
+        <button class="nav-tab-btn" onclick="switchTab('gritsay-tree')">Ветка Грицай / Копиця</button>
         <button class="nav-tab-btn" onclick="switchTab('icons-tab')">Иконы</button>
         <button class="nav-tab-btn" onclick="switchTab('signatures-tab')">Подписи</button>
     </div>
@@ -1044,59 +1044,57 @@
 <!-- ================= ВКЛАДКА 3: ВЕТКА ГРИЦАЙ / КОПИЦЯ ================= -->
 <div class="tab-view" id="view-gritsay-tree">
     <div class="viewport-container" id="gritsay-viewport">
-        <div class="canvas-container" id="gritsay-canvas" style="min-width: 3500px; padding-top: 100px;">
+        <div class="canvas-container" id="gritsay-canvas" style="min-width: 4200px; padding-top: 100px;">
             <svg id="gritsay-tree-svg" class="tree-svg-layer"></svg>
 
             <!-- Поколение I (Прадеды) -->
-            <div style="display: flex; justify-content: center; gap: 500px; margin-bottom: 80px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 80px;">
+                
                 <!-- Прадеды по Копице -->
-                <div class="cards-cluster">
+                <div class="cards-cluster" style="margin-right: 180px;">
                     <div class="person-card liquid-glass male" id="card-g-moisey" onclick="openPerson('moisey_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Моисей Васильев Копица</div>
-                        <div class="dates-label">1862 г.р.</div>
-                        <div class="dates-label">Брак 30.01.1881 г.</div>
-                        <div class="dates-label">Ум. 28.10.1925 г.</div>
+                        <div class="dates-label">1862 – 28.10.1915</div>
                         <div class="death-cause">Умер от тифа</div>
-                        <div class="place-tag">Прадед Веры</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-irina" onclick="openPerson('irina_ivkova')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Ирина Иванова Ивкова</div>
-                        <div class="dates-label">1863 г.р.</div>
-                        <div class="dates-label">Брак 30.01.1881 г.</div>
-                        <div class="place-tag">Прабабушка Веры</div>
+                        <div class="dates-label">1863 – Умершая</div>
+                        <div class="place-tag">Брак 30.01.1881 г.</div>
                     </div>
                 </div>
 
-                <!-- Прадеды по Пидопригоре -->
-                <div class="cards-cluster">
-                    <div class="person-card liquid-glass male" id="card-g-ivan-p" onclick="openPerson('ivan_pidoprigora')">
+                <!-- Прадеды по Подопригоре -->
+                <div class="cards-cluster" style="margin-left: 180px;">
+                    <div class="person-card liquid-glass male" id="card-g-arkhip-p" onclick="openPerson('arkhip_podoprigora')">
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                        <div class="name-label">Иван Стефанов Пидопригора</div>
-                        <div class="dates-label">XIX век</div>
+                        <div class="name-label">Архип Игнатов Подопригора</div>
+                        <div class="dates-label">XIX век – Умерший</div>
                         <div class="place-tag">Прадед Веры</div>
                     </div>
-                    <div class="person-card liquid-glass female" id="card-g-elena-p" onclick="openPerson('elena_pidoprigora')">
+                    <div class="person-card liquid-glass female" id="card-g-nadezhda-p" onclick="openPerson('nadezhda_simeonova')">
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label">Елена Петрова Пидопригора</div>
-                        <div class="dates-label">XIX век</div>
+                        <div class="name-label">Надежда Симеонова</div>
+                        <div class="dates-label">XIX век – Умершая</div>
                         <div class="place-tag">Прабабушка Веры</div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Поколение II (Деды) -->
-            <div style="display: flex; justify-content: center; gap: 400px; margin-bottom: 80px;">
-                <!-- Родители Копиця -->
-                <div class="cards-cluster">
+            <!-- Поколение II (Деды и их братья/сестры) -->
+            <div style="display: flex; justify-content: center; margin-bottom: 80px;">
+                
+                <!-- Копиця (Деды) -->
+                <div class="cards-cluster" style="margin-right: 60px;">
                     <div class="person-card liquid-glass male" id="card-g-pavel-k" onclick="openPerson('pavel_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Павел Моисеев Копица</div>
-                        <div class="dates-label">1863 г.р.</div>
                         <div class="dates-label">Брак 25.01.1904 г.</div>
                         <div class="place-tag">с. Штеповка</div>
                     </div>
@@ -1109,23 +1107,51 @@
                     </div>
                 </div>
 
-                <!-- Родители Пидопригора -->
-                <div class="cards-cluster">
-                    <div class="person-card liquid-glass male" id="card-g-iakov-p" onclick="openPerson('iakov_pidoprigora')">
+                <!-- Подопригора (Деды + их братья/сестры) -->
+                <div class="cards-cluster" style="margin-left: 60px;">
+                    <!-- Братья/сестры Иакова -->
+                    <div class="person-card liquid-glass male" id="card-g-semen1" onclick="openPerson('semen_podoprigor_1')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Семен Подопригор</div>
+                        <div class="dates-label">1878 – 1879</div>
+                        <div class="death-cause">Умер во младенчестве</div>
+                    </div>
+                    <div class="person-card liquid-glass male" id="card-g-semen2" onclick="openPerson('semen_podoprigor_2')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Семен Подопригор</div>
+                        <div class="dates-label">1878 – 1879</div>
+                        <div class="death-cause">Умер во младенчестве</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-evfrosinia-p" onclick="openPerson('evfrosinia_podoprigor')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Евфросиния Подопригор</div>
+                        <div class="dates-label">1879 – Умершая</div>
+                        <div class="place-tag">Сестра Иакова</div>
+                    </div>
+                    
+                    <!-- Иаков и Евдокия -->
+                    <div class="person-card liquid-glass male" id="card-g-iakov-p" onclick="openPerson('iakov_pidoprigora')" style="margin-left: 30px;">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                        <div class="name-label">Иаков Иванович Пидопригора</div>
-                        <div class="dates-label">07.10.1874 г.</div>
+                        <div class="name-label">Иаков Архипов Подопригора</div>
+                        <div class="dates-label">1883 – Умерший</div>
                         <div class="place-tag">Отец Якилины</div>
                     </div>
+                    <div class="person-card liquid-glass female" id="card-g-evdokia-p" onclick="openPerson('evdokia_vasilieva')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Евдокия Василиева</div>
+                        <div class="dates-label">Умершая</div>
+                        <div class="place-tag">Мать Якилины</div>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Поколение III (Родители Владимира и Веры + Братья/Сестры) -->
-            <div style="display: flex; gap: 80px; justify-content: center; margin-bottom: 80px;">
+            <div style="display: flex; gap: 80px; justify-content: center; margin-bottom: 80px; margin-left: -500px;">
                 
                 <!-- Линия Грицай -->
-                <div class="cards-cluster">
+                <div class="cards-cluster" style="align-items: flex-start; margin-right: 40px;">
                     <div class="person-card liquid-glass male" id="card-g-fedor-g" onclick="openPerson('fedor_gritsay_sn')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
@@ -1191,20 +1217,20 @@
                 </div>
 
                 <!-- Дочь Иакова -->
-                <div class="cards-cluster">
+                <div class="cards-cluster" style="margin-left: 40px;">
                     <div class="person-card liquid-glass female" id="card-g-yakilina" onclick="openPerson('yakilina_pidoprigora')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label">Якилина Яколовна Пидопригора</div>
-                        <div class="dates-label">Мать Веры</div>
-                        <div class="place-tag">Линия Копиця</div>
+                        <div class="name-label">Якилина Яколовна Пидопрыгора</div>
+                        <div class="dates-label">1909 – Умершая</div>
+                        <div class="place-tag">Мать Веры</div>
                     </div>
                 </div>
 
             </div>
 
             <!-- Поколение IV (Владимир и Вера) -->
-            <div style="display: flex; gap: 40px; justify-content: center; margin-bottom: 100px; margin-left: 500px;">
+            <div style="display: flex; gap: 40px; justify-content: center; margin-bottom: 100px; margin-left: 200px;">
                 <div class="cards-cluster">
                     <div class="person-card liquid-glass male" id="card-g-vladimir" onclick="openPerson('vladimir_gritsay')">
                         <div class="doc-indicator">📜</div>
@@ -1225,7 +1251,7 @@
             </div>
 
             <!-- Поколение V (Тамара) -->
-            <div style="display: flex; justify-content: center; margin-left: 500px;">
+            <div style="display: flex; justify-content: center; margin-left: 200px;">
                 <div class="cards-cluster">
                     <div class="person-card liquid-glass female" id="card-g-tamara" onclick="openPerson('tamara_gritsay')" style="box-shadow: 0 10px 40px rgba(192, 38, 211, 0.25);">
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
@@ -1390,15 +1416,15 @@
         semen_ilarionov_f: { name: "Семен Иларионцев Федченко", dates: "16.04.1918 г.", place: "С. Малий Бобрик", bio: "Младший брат Евдокима Федченко. Родился 16 апреля 1918 года в с. Малый Бобрик.", status: "ok" },
 
         iakim_k: { name: "Иаким Филиппов Кочмола", dates: "1839 г.р. – 1889 г.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный.<br><br><b>Причина смерти:</b> в 1889 году его задавило землей.", status: "ok" },
-        maria_e: { name: "Мария Ефимова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Супруга Иакима Филиппова Кочмолы. Мать большой семьи.", status: "ok" },
+        marfa_e: { name: "Марфа Ефимова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Супруга Иакима Филиппова Кочмолы. Мать большой семьи.", status: "ok" },
         sergey_g: { name: "Сергей Васильев Голуб", dates: "1846 г.р. – 02.02.1876 г.", place: "С. Верхняя Сыроватка / Хоружевка", bio: "Отец Мотроны Сергеевой Голубовой.<br><br><b>Причина смерти:</b> умер от простуды.", status: "ok" },
         feodor_v: { name: "Феодор Гавриилов Вишня", dates: "~1860–1868 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный. Отец четверых сыновей: Харитона, Никифора, Димитрия и Семена.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "approx", note: "Год рождения установлен ориентировочно." },
         anastasia_ch: { name: "Анастасия Феодотова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Жена Феодора Гавриилова Вишни. Мать Харитона, Семена, Никифора и Димитрия.", status: "ok" },
-        andrey_k: { name: "Андрей Иакимов Кочмола", dates: "01.10.1861 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Филиппова Кочмолы и Марии Ефимовой.", status: "ok" },
-        kirill_k: { name: "Кирилл Иакимов Кочмола", dates: "18.03.1865 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Кочмолы и Марии Ефимовой.", status: "ok" },
-        evfrosinia_k: { name: "Евфросиния Иакимов Кочмола", dates: "19.01.1873 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима Кочмолы и Марии Ефимовой.", status: "ok" },
-        epistimia_k: { name: "Епистимия Иакимова Кочмола", dates: "04.11.1875 – 18.07.1878", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима и Марии. Умерла 18 июля 1878 года в возрасте трех лет от скарлатины.", status: "ok" },
-        konstantin_k: { name: "Константин Иакимович Кочмола", dates: "20.05.1868 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима и Марии. 25 января 1887 года женился на 20-летней Мотроне Сергеевой Голубовой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
+        andrey_k: { name: "Андрей Иакимов Кочмола", dates: "01.10.1861 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Филиппова Кочмолы и Марфы Ефимовой.", status: "ok" },
+        kirill_k: { name: "Кирилл Иакимов Кочмола", dates: "18.03.1865 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Кочмолы и Марфы Ефимовой.", status: "ok" },
+        evfrosinia_k: { name: "Евфросиния Иакимов Кочмола", dates: "19.01.1873 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима Кочмолы и Марфы Ефимовой.", status: "ok" },
+        epistimia_k: { name: "Епистимия Иакимова Кочмола", dates: "04.11.1875 – 18.07.1878", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима и Марфы. Умерла 18 июля 1878 года в возрасте трех лет от скарлатины.", status: "ok" },
+        konstantin_k: { name: "Константин Иакимович Кочмола", dates: "20.05.1868 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима и Марфы. 25 января 1887 года женился на 20-летней Мотроне Сергеевой Голубовой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
         motrona_g: { name: "Мотрона Сергеева Голубова", dates: "1867 г.р.", place: "С. Верхняя Сыроватка", bio: "Дочь Сергея Васильева Голуба (1846–1876). Вышла замуж в 20 лет 25 января 1887 года.", status: "ok" },
         hariton_v: { name: "Харитон Феодоров Вишня", dates: "01.06.1885 – 05.10.1922", place: "С. Верхняя Сыроватка", bio: "Брат Семена Вишни. Венчался в 1907 г. с Матроной Климовой Коваленко.<br><br><b>Причина смерти:</b> умер от горловой чахотки.", status: "ok" },
         matrona_kovalenko: { name: "Матрона Климова Коваленко", dates: "1885 г.р.", place: "С. Верхняя Сыроватка", bio: "Жена Харитона Феодорова Вишни. Венчались в 1907 году.", status: "ok" },
@@ -1423,8 +1449,16 @@
         ded_yura: { name: "ДЕДА", dates: "Поколение V", place: "С. Верхняя Сыроватка / Малый Бобрик", bio: "Сын Ивана Семеновича Вишни и Полины Евдокимовны Федченко. Главная объединяющая фигура обоих родов.", status: "ok" },
         
         // НОВЫЕ ПЕРСОНЫ (ГРИЦАЙ / КОПИЦЯ)
-        moisey_kopitsya: { name: "Моисей Васильев Копица", dates: "Ум. 28.10.1925 г.", place: "с. Штеповка", bio: "Отец Павла Моисеева Копицы.<br><br><b>Брак:</b> 30 января 1881 года обвенчался с Ириной Ивановой Ивковой.<br><br><b>Причина смерти:</b> умер 28 октября 1925 года от тифа.", status: "ok" },
-        irina_ivkova: { name: "Ирина Иванова Ивкова", dates: "Брак 30.01.1881 г.", place: "с. Штеповка", bio: "Супруга Моисея Васильева Копицы. Обвенчались 30 января 1881 года. Мать Павла Моисеева Копицы.", status: "ok" },
+        arkhip_podoprigora: { name: "Архип Игнатов Подопригора", dates: "Умерший", place: "Неизвестно", bio: "Отец Иакова Архиповича Подопригоры.", status: "ok" },
+        nadezhda_simeonova: { name: "Надежда Симеонова", dates: "Умершая", place: "Неизвестно", bio: "Жена Архипа Игнатова Подопригоры. Мать Иакова Архиповича Подопригоры.", status: "ok" },
+        semen_podoprigor_1: { name: "Семен Подопригор", dates: "1878 – 1879", place: "Неизвестно", bio: "Сын Архипа Игнатова и Надежды Симеоновой. Умер во младенчестве.", status: "ok" },
+        semen_podoprigor_2: { name: "Семен Подопригор", dates: "1878 – 1879", place: "Неизвестно", bio: "Сын Архипа Игнатова и Надежды Симеоновой. Умер во младенчестве.", status: "ok" },
+        evfrosinia_podoprigor: { name: "Евфросиния Подопригор", dates: "1879 – Умершая", place: "Неизвестно", bio: "Дочь Архипа Игнатова и Надежды Симеоновой. Сестра Иакова.", status: "ok" },
+        iakov_pidoprigora: { name: "Иаков Архипов Подопригора", dates: "1883 – Умерший", place: "Неизвестно", bio: "Отец Якилины Яколовны. Сын Архипа Игнатова и Надежды Симеоновой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1931 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
+        evdokia_vasilieva: { name: "Евдокия Василиева", dates: "Умершая", place: "Неизвестно", bio: "Жена Иакова Архипова Подопригоры. Мать Якилины.", status: "ok" },
+
+        moisey_kopitsya: { name: "Моисей Васильев Копица", dates: "1862 – 28.10.1915", place: "с. Штеповка", bio: "Отец Павла Моисеева Копицы.<br><br><b>Брак:</b> 30 января 1881 года обвенчался с Ириной Ивановой Ивковой.<br><br><b>Причина смерти:</b> умер 28 октября 1915 года от тифа.", status: "ok" },
+        irina_ivkova: { name: "Ирина Иванова Ивкова", dates: "1863 – Умершая", place: "с. Штеповка", bio: "Супруга Моисея Васильева Копицы. Обвенчались 30 января 1881 года. Мать Павла Моисеева Копицы.", status: "ok" },
         pavel_kopitsya: { name: "Павел Моисеев Копица", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Сын Моисея Васильева Копицы и Ирины Ивановой Ивковой. Отец большого семейства Копиця.<br><br><b>Брак:</b> 25 января 1904 года обвенчался с Иустинией Христофоровой Тимошенковой.", status: "ok" },
         iustiniya_khristoforova: { name: "Иустиния Христофорова Тимошенкова", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Жена Павла Моисеева Копицы. Обвенчались 25 января 1904 года. Мать Луки, Евфимии, Александры, Марии, Евгении, Иоанна и Федора.", status: "ok" },
         luka_kopitsya: { name: "Лука Павлович Копиця", dates: "17.10.1904 – 11.11.1904", place: "с. Штеповка", bio: "Старший брат Федора Павловича Копиця.<br><br><b>Причина смерти:</b> умер от гриппа (прожил меньше месяца).", status: "ok" },
@@ -1433,14 +1467,11 @@
         maria_kopitsya: { name: "Мария Павловна Копиця", dates: "16.07.1910 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
         evgenia_kopitsya: { name: "Евгения Павловна Копиця", dates: "23.12.1911 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
         ioann_kopitsya: { name: "Иоанн Павлович Копиця", dates: "24.05.1913 г.", place: "с. Штеповка", bio: "Младший брат Федора Павловича Копиця.", status: "ok" },
-        ivan_pidoprigora: { name: "Иван Стефанов Пидопригора", dates: "XIX век", place: "Неизвестно", bio: "Отец Иакова Ивановича Пидопригоры.", status: "ok" },
-        elena_pidoprigora: { name: "Елена Петрова Пидопригора", dates: "XIX век", place: "Неизвестно", bio: "Мать Иакова Ивановича Пидопригоры.", status: "ok" },
-        iakov_pidoprigora: { name: "Иаков Иванович Пидопригора", dates: "07.10.1874 г.", place: "Неизвестно", bio: "Отец Якилины Яколовны. Сын Ивана Стефанова и Елены Петровой Пидопригоры.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1931 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
         fedor_gritsay_sn: { name: "Федор Грицай", dates: "ХХ век", place: "Неизвестно", bio: "Отец Владимира Федоровича Грицай. Его подпись фигурирует в архивной записи о рождении сына.", status: "ok" },
-        fedor_kopitsya: { name: "Федор Павлович Копиця", dates: "07.02.1909 – 29.11.1944", place: "Сумская обл. / Погиб: Чехословакия", bio: "Отец Веры Федоровны Копиця. Супруг Якилины Яколовны Пидопригоры.<br><br><b>Участие в Великой Отечественной войне:</b><br>Призван в 1944 году Погребищенским РВК (Винницкая обл.). Служил в звании <b>гвардии красноармейца</b> в 203-м гвардейском стрелковом полку (70-я гв. стрелковая дивизия).<br><br><b>Причина выбытия:</b> убит в бою 29 ноября 1944 года.<br><b>Первичное место захоронения:</b> Чехословакия, Стропковский р-н, западнее с. Белеевце, южный склон высоты 577.", status: "ok" },
-        yakilina_pidoprigora: { name: "Якилина Яколовна Пидопригора", dates: "ХХ век", place: "Неизвестно", bio: "Мать Веры Федоровны Копиця. Супруга Федора Павловича Копиця. Дочь Иакова Ивановича Пидопригоры.", status: "ok" },
+        fedor_kopitsya: { name: "Федор Павлович Копиця", dates: "07.02.1909 – 29.11.1944", place: "Сумская обл. / Погиб: Чехословакия", bio: "Отец Веры Федоровны Копиця. Супруг Якилины Яколовны Пидопрыгоры.<br><br><b>Участие в Великой Отечественной войне:</b><br>Призван в 1944 году Погребищенским РВК (Винницкая обл.). Служил в звании <b>гвардии красноармейца</b> в 203-м гвардейском стрелковом полку (70-я гв. стрелковая дивизия).<br><br><b>Причина выбытия:</b> убит в бою 29 ноября 1944 года.<br><b>Первичное место захоронения:</b> Чехословакия, Стропковский р-н, западнее с. Белеевце, южный склон высоты 577.", status: "ok" },
+        yakilina_pidoprigora: { name: "Якилина Яколовна Пидопрыгора", dates: "1909 – Умершая", place: "Неизвестно", bio: "Мать Веры Федоровны Копиця. Супруга Федора Павловича Копиця. Дочь Иакова Архиповича Подопригоры и Евдокии Василиевы.", status: "ok" },
         vladimir_gritsay: { name: "Владимир Федорович Грицай", dates: "02.01.1928 г.", place: "Неизвестно", bio: "Отец Тамары Владимировны Грицай. Сын Федора Грицая.", status: "ok" },
-        vera_kopitsya: { name: "Вера Федоровна Копиця", dates: "20.01.1936 г.", place: "Неизвестно", bio: "Мать Тамары Владимировны Грицай. Дочь Федора Павловича Копиця и Якилины Яколовны Пидопригоры.", status: "ok" },
+        vera_kopitsya: { name: "Вера Федоровна Копиця", dates: "20.01.1936 г.", place: "Неизвестно", bio: "Мать Тамары Владимировны Грицай. Дочь Федора Павловича Копиця и Якилины Яколовны Пидопрыгоры.", status: "ok" },
         tamara_gritsay: { name: "Тамара Владимировна Грицай", dates: "Поколение III", place: "Неизвестно", bio: "Дочь Владимира Федоровича Грицай и Веры Федоровны Копиця. Хранительница священных семейных икон, которыми её благословила Феодосия Константиновна Кочмола.", status: "ok" }
     };
 
@@ -1492,12 +1523,12 @@
         { id: "doc_feodosia_cert_1899", title: "Свидетельство о рождении Феодосии (1899 г.)", image: "feodosia1899.jpg", peopleRoles: { "fedosia_k": "Свидетельство", "konstantin_k": "Отец", "motrona_g": "Мать" } },
         { id: "doc_feodosia_birth_1899", title: "Актовая запись о рождении Феодосии (29 мая 1899 г.)", image: "feodosia1899.png", peopleRoles: { "fedosia_k": "Ребенок", "konstantin_k": "Отец", "motrona_g": "Мать" } },
         { id: "doc_konstantin_motrona_marriage_1887", title: "Брак Константина и Мотроны (1887 г.)", image: "zhenitba_motrona+konstantin_1887.png", peopleRoles: { "konstantin_k": "Жених", "motrona_g": "Невеста" } },
-        { id: "doc_konstantin_birth_1868", title: "Рождение Константина (20 мая 1868 г.)", image: "rozhdenie_konstantina_kochmola_1868.png", peopleRoles: { "konstantin_k": "Ребенок", "iakim_k": "Отец", "maria_e": "Мать" } },
-        { id: "doc_epistimia_birth_1875", title: "Рождение Епистимии (4 ноября 1875 г.)", image: "rozhdenie_epistimii_1875.png", peopleRoles: { "epistimia_k": "Ребенок", "iakim_k": "Отец", "maria_e": "Мать" } },
+        { id: "doc_konstantin_birth_1868", title: "Рождение Константина (20 мая 1868 г.)", image: "rozhdenie_konstantina_kochmola_1868.png", peopleRoles: { "konstantin_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
+        { id: "doc_epistimia_birth_1875", title: "Рождение Епистимии (4 ноября 1875 г.)", image: "rozhdenie_epistimii_1875.png", peopleRoles: { "epistimia_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
         { id: "doc_epistimia_death_1878", title: "Смерть Епистимии от скарлатины (1878 г.)", image: "smert_epistimii_1878.png", peopleRoles: { "epistimia_k": "Умершая" } },
-        { id: "doc_andrey_birth_1861", title: "Рождение Андрея (1 октября 1861 г.)", image: "rozxhdenie_andreya_1861.png", peopleRoles: { "andrey_k": "Ребенок", "iakim_k": "Отец", "maria_e": "Мать" } },
-        { id: "doc_kirill_birth_1865", title: "Рождение Кирилла (18 марта 1865 г.)", image: "rozhdenie_kirilla_1865.png", peopleRoles: { "kirill_k": "Ребенок", "iakim_k": "Отец", "maria_e": "Мать" } },
-        { id: "doc_evfrosinia_birth_1873", title: "Рождение Евфросинии (19 января 1873 г.)", image: "rozhdenie_evfrosinii_1873.png", peopleRoles: { "evfrosinia_k": "Ребенок", "iakim_k": "Отец", "maria_e": "Мать" } },
+        { id: "doc_andrey_birth_1861", title: "Рождение Андрея (1 октября 1861 г.)", image: "rozxhdenie_andreya_1861.png", peopleRoles: { "andrey_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
+        { id: "doc_kirill_birth_1865", title: "Рождение Кирилла (18 марта 1865 г.)", image: "rozhdenie_kirilla_1865.png", peopleRoles: { "kirill_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
+        { id: "doc_evfrosinia_birth_1873", title: "Рождение Евфросинии (19 января 1873 г.)", image: "rozhdenie_evfrosinii_1873.png", peopleRoles: { "evfrosinia_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
         { id: "doc_iakim_death_1889", title: "Смерть Иакима Кочмолы (1889 г.)", image: "smert_iakima_1889.png", peopleRoles: { "iakim_k": "Погибший" } },
         { id: "doc_sergey_death_1876", title: "Смерть Сергея Голуба (2 февраля 1876 г.)", image: "smert_sergeya_1876.png", peopleRoles: { "sergey_g": "Умерший" } },
         { id: "doc_dimitriy_birth_1887", title: "Рождение Димитрия (26 октября 1887 г.)", image: "dimitriy_kochmola_1887.png", peopleRoles: { "dimitriy_k": "Ребенок", "konstantin_k": "Отец", "motrona_g": "Мать" } },
@@ -1521,9 +1552,9 @@
 
         // ГРИЦАЙ / КОПИЦЯ
         { id: "doc_moisei_irina_marriage_1881", title: "Брак Моисея Копицы и Ирины Ивковой (30 января 1881 г.)", image: "Moisei+irina_1881.png", peopleRoles: { "moisey_kopitsya": "Жених", "irina_ivkova": "Невеста" } },
-        { id: "doc_moisei_death_1925", title: "Смерть Моисея Копицы (28 октября 1925 г.)", image: "Moisei_smert_1915.png", peopleRoles: { "moisey_kopitsya": "Умерший" } },
+        { id: "doc_moisei_death_1915", title: "Смерть Моисея Копицы (28 октября 1915 г.)", image: "Moisei_smert_1915.png", peopleRoles: { "moisey_kopitsya": "Умерший" } },
         { id: "doc_pavel_iustinia_marriage_1904", title: "Брак Павла Копицы и Иустинии Тимошенковой (25 января 1904 г.)", image: "Pavel+iustinia_1904.png", peopleRoles: { "pavel_kopitsya": "Жених", "iustiniya_khristoforova": "Невеста" } },
-        { id: "doc_iakov_birth_1874", title: "Рождение Иакова Пидопригоры (1874 г.)", image: "Iakov_Pidoprigora_1874.png", peopleRoles: { "iakov_pidoprigora": "Ребенок", "ivan_pidoprigora": "Отец", "elena_pidoprigora": "Мать" } },
+        { id: "doc_iakov_birth_1874", title: "Рождение Иакова Подопригоры (1874 г.)", image: "Iakov_Pidoprigora_1874.png", peopleRoles: { "iakov_pidoprigora": "Ребенок", "arkhip_podoprigora": "Отец", "nadezhda_simeonova": "Мать" } },
         { id: "doc_repr_iakov_p", title: "Запись об осуждении (1931) - ст. 54-10 КК УСРР", image: "Pidoprigora_Yakiv_osuzhden_1931.png", peopleRoles: { "iakov_pidoprigora": "Осужден" } },
         
         { id: "doc_aleksandra_k_birth", title: "Рождение Александры Копици (1907)", image: "Aleksandra_1907.png", peopleRoles: { "aleksandra_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
@@ -1826,7 +1857,7 @@
                     }
                 }
 
-                drawCoupleAndChildren('card-iakim', 'card-maria', ['card-andrey', 'card-kirill', 'card-evfrosinia', 'card-epistimia', 'card-konstantin']);
+                drawCoupleAndChildren('card-iakim', 'card-marfa-e', ['card-andrey', 'card-kirill', 'card-evfrosinia', 'card-epistimia', 'card-konstantin']);
                 drawParentToChild('card-sergey', 'card-motrona');
                 drawCoupleAndChildren('card-konstantin', 'card-motrona', ['card-dimitriy-k', 'card-maria-k', 'card-ioann-k', 'card-mark-k', 'card-fedosia-k']);
                 drawCoupleAndChildren('card-dimitriy-k', 'card-pelagiya-p', ['card-daniil-k', 'card-roman-k']);
@@ -1945,17 +1976,21 @@
                     }
                 }
 
+                // Связи Копиця
                 drawGCoupleAndChildren('card-g-moisey', 'card-g-irina', ['card-g-pavel-k']);
-                drawGCoupleAndChildren('card-g-ivan-p', 'card-g-elena-p', ['card-g-iakov-p']);
-                
-                drawGParentToChild('card-g-iakov-p', 'card-g-yakilina');
-                drawGParentToChild('card-g-fedor-g', 'card-g-vladimir');
-                
                 drawGCoupleAndChildren('card-g-pavel-k', 'card-g-iustiniya', [
                     'card-g-luka', 'card-g-evfimia', 'card-g-aleksandra', 
                     'card-g-maria', 'card-g-evgenia', 'card-g-ioann', 'card-g-fedor-k'
                 ]);
 
+                // Связи Подопригора
+                drawGCoupleAndChildren('card-g-arkhip-p', 'card-g-nadezhda-p', [
+                    'card-g-semen1', 'card-g-semen2', 'card-g-evfrosinia-p', 'card-g-iakov-p'
+                ]);
+                drawGCoupleAndChildren('card-g-iakov-p', 'card-g-evdokia-p', ['card-g-yakilina']);
+
+                // Объединение семей
+                drawGParentToChild('card-g-fedor-g', 'card-g-vladimir');
                 drawGCoupleAndChildren('card-g-fedor-k', 'card-g-yakilina', ['card-g-vera']);
                 drawGCoupleAndChildren('card-g-vladimir', 'card-g-vera', ['card-g-tamara']);
             }
@@ -2014,7 +2049,7 @@
             fedOffsetY = isMobile ? 150 : 70;
         } else if (activeCanvasType === 'gritsay') {
             griZoomScale = isMobile ? 0.45 : 0.8;
-            const canvasWidth = 2500;
+            const canvasWidth = 3500;
             griOffsetX = (window.innerWidth - canvasWidth * griZoomScale) / 2;
             griOffsetY = isMobile ? 100 : 70;
         }
