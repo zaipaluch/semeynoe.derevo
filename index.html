@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Родословное древо: Вишня, Кочмола, Голуб, Федченко, Зинченко, Грицай</title>
+<title>Родословное древо: Вишня, Кочмола, Федченко, Зинченко, Копиця, Подопригора</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-        var(--male-color): #1d4ed8;      
-        var(--female-color): #c026d3;    
+        --male-color: #1d4ed8;      
+        --female-color: #c026d3;    
         
         --glass-bg: rgba(255, 255, 255, 0.25);
         --glass-border: rgba(255, 255, 255, 0.4);
@@ -254,20 +254,14 @@
 
     .ancestors-mega-block { display: flex; justify-content: center; align-items: flex-start; gap: 80px; margin-bottom: 100px; }
     .vishnya-ancestors-col { display: flex; flex-direction: column; align-items: center; }
-    .kochmola-golub-composite { display: flex; flex-direction: column; }
-    .kg-row-top { display: flex; align-items: flex-end; margin-bottom: 80px; }
-    .iakim-cluster { flex: 1; display: flex; flex-direction: column; align-items: center; }
-    .sergey-golub-cluster { width: 165px; display: flex; flex-direction: column; align-items: center; margin-left: 40px; }
-    .kg-row-bottom { display: flex; align-items: flex-start; }
-    .kochmola-children-strip { display: flex; gap: 24px; }
-    .motrona-col { width: 165px; margin-left: 40px; display: flex; flex-direction: column; align-items: center; }
+    .kochmola-golub-composite { display: flex; flex-direction: column; align-items: center; }
 
     .tree-pillars-container { display: flex; justify-content: center; align-items: flex-start; gap: 100px; margin-bottom: 80px; }
     .family-pillar { display: flex; flex-direction: column; align-items: center; }
     .family-pillar.center-main { padding: 0 20px; }
     .pillar-row-gen3, .pillar-row-gen4, .pillar-row-gen5 { min-height: 195px; display: flex; align-items: flex-start; margin-bottom: 100px; }
     .pillar-row-gen5 { margin-bottom: 0; }
-    .cards-cluster { display: flex; gap: 24px; position: relative; }
+    .cards-cluster { display: flex; gap: 24px; position: relative; align-items: flex-start; }
 
     .fedchenko-gen-row { display: flex; justify-content: center; align-items: flex-start; gap: 120px; margin-bottom: 100px; }
     .fedchenko-gen-row-center { display: flex; justify-content: center; align-items: flex-start; margin-bottom: 100px; }
@@ -401,7 +395,7 @@
     <div class="nav-tabs">
         <button class="nav-tab-btn active" onclick="switchTab('main-tree')">Ветка Вишня / Кочмола</button>
         <button class="nav-tab-btn" onclick="switchTab('fedchenko-tree')">Ветка Федченко / Зинченко</button>
-        <button class="nav-tab-btn" onclick="switchTab('gritsay-tree')">Ветка Грицай / Копиця</button>
+        <button class="nav-tab-btn" onclick="switchTab('gritsay-tree')">Ветка Копиця / Подопригора</button>
         <button class="nav-tab-btn" onclick="switchTab('icons-tab')">Иконы</button>
         <button class="nav-tab-btn" onclick="switchTab('signatures-tab')">Подписи</button>
     </div>
@@ -441,87 +435,67 @@
                 </div>
 
                 <div class="kochmola-golub-composite">
-                    <div class="kg-row-top">
-                        <div class="iakim-cluster">
-                            <div class="cards-cluster">
-                                <div class="person-card liquid-glass male" id="card-iakim" onclick="openPerson('iakim_k')">
-                                    <div class="doc-indicator">📜</div>
-                                    <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                                    <div class="name-label">Иаким Филиппов Кочмола</div>
-                                    <div class="dates-label">1839 г.р. – 1889 г.</div>
-                                    <div class="death-cause">Погиб: задавило землей</div>
-                                    <div class="place-tag">с. Верхняя Сыроватка</div>
-                                </div>
-                                <div class="person-card liquid-glass female" id="card-maria" onclick="openPerson('maria_e')">
-                                    <div class="doc-indicator">📜</div>
-                                    <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                                    <div class="name-label">Мария Ефимова</div>
-                                    <div class="dates-label">XIX в. – Умершая</div>
-                                    <div class="place-tag">с. Верхняя Сыроватка</div>
-                                </div>
-                            </div>
+                    <div class="cards-cluster" style="margin-bottom: 80px;">
+                        <div class="person-card liquid-glass male" id="card-iakim" onclick="openPerson('iakim_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="name-label">Иаким Филиппов Кочмола</div>
+                            <div class="dates-label">1839 г.р. – 1889 г.</div>
+                            <div class="death-cause">Погиб: задавило землей</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
                         </div>
-
-                        <div class="sergey-golub-cluster">
-                            <div class="person-card liquid-glass male" id="card-sergey" onclick="openPerson('sergey_g')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                                <div class="name-label">Сергей Васильев Голуб</div>
-                                <div class="dates-label">1846 г.р. – 02.02.1876 г.</div>
-                                <div class="death-cause">Умер от простуды</div>
-                                <div class="place-tag">Похоронен: с. Хоружевка</div>
-                            </div>
+                        <div class="person-card liquid-glass female" id="card-marfa-e" onclick="openPerson('marfa_e')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                            <div class="name-label">Марфа Ефимова</div>
+                            <div class="dates-label">XIX в. – Умершая</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
                         </div>
                     </div>
 
-                    <div class="kg-row-bottom">
-                        <div class="kochmola-children-strip">
-                            <div class="person-card liquid-glass male" id="card-andrey" onclick="openPerson('andrey_k')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                                <div class="name-label">Андрей Иакимов Кочмола</div>
-                                <div class="dates-label">01.10.1861 г.</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
-                            <div class="person-card liquid-glass male" id="card-kirill" onclick="openPerson('kirill_k')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                                <div class="name-label">Кирилл Иакимов Кочмола</div>
-                                <div class="dates-label">18.03.1865 г.</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
-                            <div class="person-card liquid-glass female" id="card-evfrosinia" onclick="openPerson('evfrosinia_k')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                                <div class="name-label">Евфросиния Иакимов Кочмола</div>
-                                <div class="dates-label">19.01.1873 г.</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
-                            <div class="person-card liquid-glass female" id="card-epistimia" onclick="openPerson('epistimia_k')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                                <div class="name-label">Епистимия Иакимова Кочмола</div>
-                                <div class="dates-label">04.11.1875 – 18.07.1878</div>
-                                <div class="death-cause">Умерла от скарлатины</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
-                            <div class="person-card liquid-glass male" id="card-konstantin" onclick="openPerson('konstantin_k')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                                <div class="name-label">Константин Иакимов Кочмола</div>
-                                <div class="dates-label">20.05.1868 г.</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
+                    <div class="cards-cluster">
+                        <div class="person-card liquid-glass male" id="card-andrey" onclick="openPerson('andrey_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="name-label">Андрей Иакимов Кочмола</div>
+                            <div class="dates-label">01.10.1861 г.</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
                         </div>
-
-                        <div class="motrona-col">
-                            <div class="person-card liquid-glass female" id="card-motrona" onclick="openPerson('motrona_g')">
-                                <div class="doc-indicator">📜</div>
-                                <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                                <div class="name-label">Мотрона Сергеева Голубова</div>
-                                <div class="dates-label">1867 г.р.</div>
-                                <div class="place-tag">с. Верхняя Сыроватка</div>
-                            </div>
+                        <div class="person-card liquid-glass male" id="card-kirill" onclick="openPerson('kirill_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="name-label">Кирилл Иакимов Кочмола</div>
+                            <div class="dates-label">18.03.1865 г.</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
+                        </div>
+                        <div class="person-card liquid-glass female" id="card-evfrosinia" onclick="openPerson('evfrosinia_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                            <div class="name-label">Евфросиния Иакимов Кочмола</div>
+                            <div class="dates-label">19.01.1873 г.</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
+                        </div>
+                        <div class="person-card liquid-glass female" id="card-epistimia" onclick="openPerson('epistimia_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                            <div class="name-label">Епистимия Иакимова Кочмола</div>
+                            <div class="dates-label">04.11.1875 – 18.07.1878</div>
+                            <div class="death-cause">Умерла от скарлатины</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
+                        </div>
+                        <div class="person-card liquid-glass male" id="card-konstantin" onclick="openPerson('konstantin_k')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                            <div class="name-label">Константин Иакимов Кочмола</div>
+                            <div class="dates-label">20.05.1868 г.</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
+                        </div>
+                        <div class="person-card liquid-glass female" id="card-motrona" onclick="openPerson('motrona_g')">
+                            <div class="doc-indicator">📜</div>
+                            <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                            <div class="name-label">Мотрона Сергеева Голубова</div>
+                            <div class="dates-label">1867 г.р.</div>
+                            <div class="place-tag">с. Верхняя Сыроватка</div>
                         </div>
                     </div>
                 </div>
@@ -985,20 +959,49 @@
                 </div>
 
                 <div class="cards-cluster">
-                    <div class="person-card liquid-glass female" id="card-f-aleksandr-sereda" onclick="openPerson('aleksandr_sereda')">
-                        <div class="doc-indicator">📜</div>
+                    <div class="person-card liquid-glass male" id="card-f-andrey-sereda" onclick="openPerson('andrey_sereda')">
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                        <div class="name-label">Александра Иванова Середа</div>
-                        <div class="dates-label" style="color: var(--female-color);">06.11.1902 г.</div>
+                        <div class="name-label">Андрей Яковлев Середа</div>
+                        <div class="dates-label" style="color: var(--male-color);">1898 г.р.</div>
                         <div class="place-tag">Сын Марфы и Ивана</div>
                     </div>
-
+                    <div class="person-card liquid-glass male" id="card-f-ioann-sereda" onclick="openPerson('ioann_sereda')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Иоан Яковлев Середа</div>
+                        <div class="dates-label" style="color: var(--male-color);">1900 г.р.</div>
+                        <div class="place-tag">Сын Марфы и Ивана</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-f-aleksandr-sereda" onclick="openPerson('aleksandr_sereda')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Александра Иванова Середа</div>
+                        <div class="dates-label" style="color: var(--female-color);">06.11.1902 г.</div>
+                        <div class="place-tag">Дочь Марфы и Ивана</div>
+                    </div>
                     <div class="person-card liquid-glass female" id="card-f-iuliania-sereda" onclick="openPerson('iuliania_sereda')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Иулиания Ивановна Середа</div>
                         <div class="dates-label" style="color: var(--female-color);">16.06.1905 г.</div>
                         <div class="place-tag">Дочь Марфы и Ивана</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-f-fekla-sereda" onclick="openPerson('fekla_sereda')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Фекла Яковлевна Середа</div>
+                        <div class="dates-label" style="color: var(--female-color);">1906 г.р.</div>
+                        <div class="place-tag">Дочь Марфы и Ивана</div>
+                    </div>
+                    <div class="person-card liquid-glass male" id="card-f-timofey-sereda" onclick="openPerson('timofey_sereda')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Тимофей Яковлев Середа</div>
+                        <div class="dates-label" style="color: var(--male-color);">1909 г.р.</div>
+                        <div class="place-tag">Сын Марфы и Ивана</div>
+                    </div>
+                    <div class="person-card liquid-glass male" id="card-f-stefan-sereda" onclick="openPerson('stefan_sereda')">
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Стефан Яковлев Середа</div>
+                        <div class="dates-label" style="color: var(--male-color);">1915 г.р.</div>
+                        <div class="place-tag">Сын Марфы и Ивана</div>
                     </div>
                 </div>
             </div>
@@ -1041,46 +1044,56 @@
     </div>
 </div>
 
-<!-- ================= ВКЛАДКА 3: ВЕТКА ГРИЦАЙ / КОПИЦЯ ================= -->
+<!-- ================= ВКЛАДКА 3: ВЕТКА КОПИЦЯ / ПОДОПРИГОРА ================= -->
 <div class="tab-view" id="view-gritsay-tree">
     <div class="viewport-container" id="gritsay-viewport">
-        <div class="canvas-container" id="gritsay-canvas" style="min-width: 4200px; padding-top: 100px;">
+        <div class="canvas-container" id="gritsay-canvas" style="min-width: 3800px; padding-top: 100px;">
             <svg id="gritsay-tree-svg" class="tree-svg-layer"></svg>
 
             <!-- Поколение I (Прадеды) -->
-            <div style="display: flex; justify-content: center; margin-bottom: 80px;">
-                
+            <div style="display: flex; justify-content: center; gap: 300px; margin-bottom: 80px;">
                 <!-- Прадеды по Копице -->
-                <div class="cards-cluster" style="margin-right: 180px;">
+                <div class="cards-cluster">
                     <div class="person-card liquid-glass male" id="card-g-moisey" onclick="openPerson('moisey_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Моисей Васильев Копица</div>
                         <div class="dates-label">1862 – 28.10.1915</div>
                         <div class="death-cause">Умер от тифа</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-irina" onclick="openPerson('irina_ivkova')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Ирина Иванова Ивкова</div>
                         <div class="dates-label">1863 – Умершая</div>
-                        <div class="place-tag">Брак 30.01.1881 г.</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                 </div>
 
                 <!-- Прадеды по Подопригоре -->
-                <div class="cards-cluster" style="margin-left: 180px;">
+                <div class="cards-cluster">
                     <div class="person-card liquid-glass male" id="card-g-arkhip-p" onclick="openPerson('arkhip_podoprigora')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Архип Игнатов Подопригора</div>
                         <div class="dates-label">XIX век – Умерший</div>
-                        <div class="place-tag">Прадед Веры</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-nadezhda-p" onclick="openPerson('nadezhda_simeonova')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label">Надежда Симеонова</div>
-                        <div class="dates-label">XIX век – Умершая</div>
-                        <div class="place-tag">Прабабушка Веры</div>
+                        <div class="name-label">Надежда Семеновна Подопригора</div>
+                        <div class="dates-label">Ум. 04.01.1885 г.</div>
+                        <div class="death-cause">Воспаление легких</div>
+                        <div class="place-tag">1-я жена Архипа</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-vassa-p" onclick="openPerson('vassa_klimenkova')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Васса Клименкова Терентиева</div>
+                        <div class="dates-label">1862 г.р. (Брак 1885)</div>
+                        <div class="place-tag">2-я жена Архипа</div>
                     </div>
                 </div>
 
@@ -1096,52 +1109,75 @@
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Павел Моисеев Копица</div>
                         <div class="dates-label">Брак 25.01.1904 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-iustiniya" onclick="openPerson('iustiniya_khristoforova')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Иустиния Христофорова Тимошенкова</div>
                         <div class="dates-label">Брак 25.01.1904 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                 </div>
 
-                <!-- Подопригора (Деды + их братья/сестры) -->
+                <!-- Подопригора (Дети Надежды и Вассы) -->
                 <div class="cards-cluster" style="margin-left: 60px;">
-                    <!-- Братья/сестры Иакова -->
+                    <!-- Дети Архипа и Надежды -->
                     <div class="person-card liquid-glass male" id="card-g-semen1" onclick="openPerson('semen_podoprigor_1')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                        <div class="name-label">Семен Подопригор</div>
-                        <div class="dates-label">1878 – 1879</div>
+                        <div class="name-label">Семен Архипов Подопригора</div>
+                        <div class="dates-label">1878 – 24.10.1879</div>
                         <div class="death-cause">Умер во младенчестве</div>
-                    </div>
-                    <div class="person-card liquid-glass male" id="card-g-semen2" onclick="openPerson('semen_podoprigor_2')">
-                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
-                        <div class="name-label">Семен Подопригор</div>
-                        <div class="dates-label">1878 – 1879</div>
-                        <div class="death-cause">Умер во младенчестве</div>
+                        <div class="place-tag">Сын Надежды</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-evfrosinia-p" onclick="openPerson('evfrosinia_podoprigor')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label">Евфросиния Подопригор</div>
-                        <div class="dates-label">1879 – Умершая</div>
-                        <div class="place-tag">Сестра Иакова</div>
+                        <div class="name-label">Евфросиния Архипова Подопригора</div>
+                        <div class="dates-label">20.09.1879 г.р.</div>
+                        <div class="place-tag">Дочь Надежды</div>
                     </div>
                     
                     <!-- Иаков и Евдокия -->
-                    <div class="person-card liquid-glass male" id="card-g-iakov-p" onclick="openPerson('iakov_pidoprigora')" style="margin-left: 30px;">
+                    <div class="person-card liquid-glass male" id="card-g-iakov-p" onclick="openPerson('iakov_pidoprigora')" style="margin-left: 20px;">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Иаков Архипов Подопригора</div>
-                        <div class="dates-label">1883 – Умерший</div>
-                        <div class="place-tag">Отец Якилины</div>
+                        <div class="dates-label">27.11.1882 – Умерший</div>
+                        <div class="place-tag">Сын Надежды</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-evdokia-p" onclick="openPerson('evdokia_vasilieva')">
+                        <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Евдокия Василиева</div>
-                        <div class="dates-label">Умершая</div>
+                        <div class="dates-label">Брак 1907 г.</div>
                         <div class="place-tag">Мать Якилины</div>
+                    </div>
+
+                    <!-- Дети от Вассы и другие -->
+                    <div class="person-card liquid-glass male" id="card-g-dimitriy-p" onclick="openPerson('dimitriy_podoprigora')" style="margin-left: 20px;">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+                        <div class="name-label">Димитрий Архипов Подопригора</div>
+                        <div class="dates-label">1887 – 1892</div>
+                        <div class="death-cause">Умер от заушницы</div>
+                        <div class="place-tag">Брат Иакова</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-iuliania-p" onclick="openPerson('iuliania_podoprigora')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Иулиания Архипова Подопригора</div>
+                        <div class="dates-label">1889 – 14.11.1892</div>
+                        <div class="death-cause">Умерла от заушницы</div>
+                        <div class="place-tag">Дочь Вассы</div>
+                    </div>
+                    <div class="person-card liquid-glass female" id="card-g-anna-p" onclick="openPerson('anna_podoprigora')">
+                        <div class="doc-indicator">📜</div>
+                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
+                        <div class="name-label">Анна Архипова Подопригора</div>
+                        <div class="dates-label">30.01.1892 г.р.</div>
+                        <div class="place-tag">Дочь Вассы</div>
                     </div>
                 </div>
 
@@ -1157,7 +1193,7 @@
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Федор Грицай</div>
                         <div class="dates-label">ХХ век</div>
-                        <div class="place-tag">Отец Владимира</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                 </div>
 
@@ -1169,50 +1205,52 @@
                         <div class="name-label">Лука Павлович Копиця</div>
                         <div class="dates-label">17.10.1904 – 11.11.1904</div>
                         <div class="death-cause">Умер от гриппа</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-evfimia" onclick="openPerson('evfimia_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Евфимия Павловна Копиця</div>
                         <div class="dates-label">12.09.1905 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-aleksandra" onclick="openPerson('aleksandra_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Александра Павловна Копиця</div>
                         <div class="dates-label">19.03.1907 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-maria" onclick="openPerson('maria_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Мария Павловна Копиця</div>
                         <div class="dates-label">16.07.1910 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass female" id="card-g-evgenia" onclick="openPerson('evgenia_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Евгения Павловна Копиця</div>
                         <div class="dates-label">23.12.1911 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     <div class="person-card liquid-glass male" id="card-g-ioann" onclick="openPerson('ioann_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Иоанн Павлович Копиця</div>
                         <div class="dates-label">24.05.1913 г.</div>
-                        <div class="place-tag">с. Штеповка</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                     
-                    <!-- Федор Копиця смещен вправо, чтобы его связь с Якилиной не пересекала братьев/сестер -->
+                    <!-- Федор Копиця -->
                     <div class="person-card liquid-glass male" id="card-g-fedor-k" onclick="openPerson('fedor_kopitsya')">
                         <div class="doc-indicator">📜</div>
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label">Федор Павлович Копиця</div>
                         <div class="dates-label">07.02.1909 – 29.11.1944</div>
                         <div class="death-cause">Погиб в бою (ВОВ)</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                 </div>
 
@@ -1223,7 +1261,7 @@
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label">Якилина Яколовна Пидопрыгора</div>
                         <div class="dates-label">1909 – Умершая</div>
-                        <div class="place-tag">Мать Веры</div>
+                        <div class="place-tag">Штеповский район</div>
                     </div>
                 </div>
 
@@ -1237,7 +1275,7 @@
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
                         <div class="name-label" style="color: var(--male-color);">Владимир Федорович Грицай</div>
                         <div class="dates-label">02.01.1928 г.</div>
-                        <div class="place-tag">Отец Тамары</div>
+                        <div class="place-tag">Штеповский р-н, хутор Верхний</div>
                     </div>
                     
                     <div class="person-card liquid-glass female" id="card-g-vera" onclick="openPerson('vera_kopitsya')">
@@ -1245,19 +1283,20 @@
                         <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
                         <div class="name-label" style="color: var(--female-color);">Вера Федоровна Копиця</div>
                         <div class="dates-label">20.01.1936 г.</div>
-                        <div class="place-tag">Мать Тамары</div>
+                        <div class="place-tag">с. Серобабино</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Поколение V (Тамара) -->
+            <!-- Поколение V (ТОМА) -->
             <div style="display: flex; justify-content: center; margin-left: 200px;">
                 <div class="cards-cluster">
                     <div class="person-card liquid-glass female" id="card-g-tamara" onclick="openPerson('tamara_gritsay')" style="box-shadow: 0 10px 40px rgba(192, 38, 211, 0.25);">
-                        <div class="avatar-wrapper"><svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg></div>
-                        <div class="name-label" style="font-size: 15px; color: var(--female-color);">Тамара Владимировна Грицай</div>
-                        <div class="dates-label">Дочь</div>
-                        <div class="place-tag" style="font-weight: 700;">Хранительница Икон</div>
+                        <div class="avatar-wrapper" style="border: 2px solid var(--female-color); padding: 2px; width: 70px; height: 70px;">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7c0 2.45 1.76 4.49 4.09 4.92C7.38 12.44 4 14.83 4 18v2h16v-2c0-3.17-3.38-5.56-7.09-6.08C15.24 11.49 17 9.45 17 7c0-2.76-2.24-5-5-5z"/></svg>
+                        </div>
+                        <div class="name-label" style="font-size: 16px; font-weight: 900; color: var(--female-color); letter-spacing: 0.5px;">ТОМА</div>
+                        <div class="dates-label">Поколение III</div>
                     </div>
                 </div>
             </div>
@@ -1273,7 +1312,7 @@
             <h3>Предыстория священных семейных икон</h3>
             <p>
                 Изначально эти святые образы принадлежали родителям Феодосии — <b>Мотроне Сергеевне Голубовой</b> и <b>Константину Иакимовичу Кочмоле</b>. 
-                После кончины родителей их дочь <b>Феодосия Константиновна</b> бережно сохранила святыни и в последующем благословила ими <b>Тамару Владимировну Грицай</b>.
+                После кончины родителей их дочь <b>Феодосия Константиновна</b> бережно сохранила святыни и в последующем благословила ими <b>ТОМУ (Тамару Владимировну Грицай)</b>.
             </p>
         </div>
 
@@ -1351,10 +1390,10 @@
         </div>
         <div class="info-row">
             <div class="info-label">Место рождения и жизни</div>
-            <div class="info-val" id="p-place">С. Верхняя Сыроватка</div>
+            <div class="info-val" id="p-place">—</div>
         </div>
         <div class="info-row">
-            <div class="info-label">Сословие, занятия и причины смерти</div>
+            <div class="info-label">Сословие, занятия и описание</div>
             <div class="info-val" id="p-bio">—</div>
         </div>
 
@@ -1367,7 +1406,7 @@
     </div>
 </div>
 
-<!-- УЛУЧШЕННЫЙ LIGHTBOX С ЗУМОМ И ПЕРЕТАСКИВАНИЕМ -->
+<!-- LIGHTBOX С ЗУМОМ И ПЕРЕТАСКИВАНИЕМ -->
 <div id="lightbox-modal">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <div id="lightbox-wrapper">
@@ -1386,10 +1425,16 @@
         iulianiya_karpova_z: { name: "Иулиания Карпова", dates: "XIX век", place: "С. Малий Бобрик", bio: "Мать Анастасии Алексеевой Зинченко и ее многочисленных братьев и сестер.", status: "ok" },
         ilarion_f: { name: "Иларион Алексеев Федьченко", dates: "28.03.1875 – 26.09.1917", place: "С. Малий Бобрик", bio: "Дед Полины Федченко. Сын Алексея Кириллова Федченко и Параскевы Михайловой. Венчался 25 апреля 1893 года с Анастасией Алексеевой Зиньченковой. Отец 9 детей.<br><br><b>Причина смерти:</b> умер 26 сентября 1917 года от рвоты.", status: "ok" },
         anastasia_aleksieva_f: { name: "Анастасия Алексеева Зинченко", dates: "Брак 25.04.1893 г.", place: "С. Малий Бобрик", bio: "Бабушка Полины Федченко. Дочь Алексея Емелианова Зинченко и Иулиании Карповой. Венчалась 25 апреля 1893 года с Иларионом Алексеевым Федьченко. Мать 9 детей.", status: "ok" },
-        marfa_z: { name: "Марфа Алексеевна Зинченко", dates: "04.07.1875 г.р.", place: "С. Малий Бобрик", bio: "Родная сестра Анастасии Алексеевой Зинченко. Родилась 4 июля 1875 года.<br><br>15 октября 1895 года обвенчалась с Иваном Яковлевым Середой. В браке родились сын Александр (1902 г.) и дочь Иулиания (1905 г.).", status: "ok" },
-        ivan_sereda: { name: "Иван Яковлев Середа", dates: "Брак 15.10.1895 г.", place: "С. Малий Бобрик", bio: "Муж Марфы Алексеевны Зинченко. Обвенчался с Марфой 15 октября 1895 года. Отец Александра (1902 г.р.) и Иулиании (1905 г.р.) Середа.", status: "ok" },
-        aleksandr_sereda: { name: "Александр Иванов Середа", dates: "06.11.1902 г.", place: "С. Малий Бобрик", bio: "Сын Ивана Яковлева Середы и Марфы Алексеевны Зинченко. Родился 6 ноября 1902 года. Двоюродный брат Евдокима Иларионова Федченко.", status: "ok" },
-        iuliania_sereda: { name: "Иулиания Ивановна Середа", dates: "16.06.1905 г.", place: "С. Малий Бобрик", bio: "Дочь Ивана Яковлева Середы и Марфы Алексеевны Зинченко. Родилась 16 июня 1905 года. Двоюродная сестра Евдокима Иларионова Федченко.", status: "ok" },
+        marfa_z: { name: "Марфа Алексеевна Зинченко", dates: "04.07.1875 г.р.", place: "С. Малий Бобрик", bio: "Родная сестра Анастасии Алексеевой Зинченко. Родилась 4 июля 1875 года.<br><br>15 октября 1895 года обвенчалась с Иваном Яковлевым Середой.", status: "ok" },
+        ivan_sereda: { name: "Иван Яковлев Середа", dates: "Брак 15.10.1895 г.", place: "С. Малий Бобрик", bio: "Муж Марфы Алексеевны Зинченко. Обвенчался с Марфой 15 октября 1895 года.", status: "ok" },
+        
+        andrey_sereda: { name: "Андрей Яковлев Середа", dates: "1898 г.р.", place: "С. Малий Бобрик", bio: "Сын Ивана Яковлева Середы и Марфы Алексеевны Зинченко.", status: "ok" },
+        ioann_sereda: { name: "Иоан Яковлев Середа", dates: "1900 г.р.", place: "С. Малий Бобрик", bio: "Сын Ивана Яковлева Середы и Марфы Алексеевны Зинченко.", status: "ok" },
+        aleksandr_sereda: { name: "Александра Иванова Середа", dates: "06.11.1902 г.", place: "С. Малий Бобрик", bio: "Дочь Ивана Яковлева Середы и Марфы Алексеевны Зинченко. Родилась 6 ноября 1902 года.", status: "ok" },
+        iuliania_sereda: { name: "Иулиания Ивановна Середа", dates: "16.06.1905 г.", place: "С. Малий Бобрик", bio: "Дочь Ивана Яковлева Середы и Марфы Алексеевны Зинченко. Родилась 16 июня 1905 года.", status: "ok" },
+        fekla_sereda: { name: "Фекла Яковлевна Середа", dates: "1906 г.р.", place: "С. Малий Бобрик", bio: "Дочь Ивана Яковлева Середы и Марфы Алексеевны Зинченко.", status: "ok" },
+        timofey_sereda: { name: "Тимофей Яковлев Середа", dates: "1909 г.р.", place: "С. Малий Бобрик", bio: "Сын Ивана Яковлева Середы и Марфы Алексеевны Зинченко.", status: "ok" },
+        stefan_sereda: { name: "Стефан Яковлев Середа", dates: "1915 г.р.", place: "С. Малий Бобрик", bio: "Сын Ивана Яковлева Середы и Марфы Алексеевны Зинченко.", status: "ok" },
         
         feodor_z: { name: "Феодор Алексеев Зинченко", dates: "08.06.1876 – 06.10.1876", place: "С. Малий Бобрик", bio: "Брат Анастасии Зинченко. Умер во младенчестве.<br><br><b>Причина смерти:</b> от родимца (младенческие судороги).", status: "ok" },
         evfimiya_z: { name: "Евфимия Алексеева Зинченко", dates: "10.07.1877 г.р.", place: "С. Малий Бобрик", bio: "Сестра Анастасии Алексеевой Зинченко.", status: "ok" },
@@ -1417,7 +1462,6 @@
 
         iakim_k: { name: "Иаким Филиппов Кочмола", dates: "1839 г.р. – 1889 г.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный.<br><br><b>Причина смерти:</b> в 1889 году его задавило землей.", status: "ok" },
         marfa_e: { name: "Марфа Ефимова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Супруга Иакима Филиппова Кочмолы. Мать большой семьи.", status: "ok" },
-        sergey_g: { name: "Сергей Васильев Голуб", dates: "1846 г.р. – 02.02.1876 г.", place: "С. Верхняя Сыроватка / Хоружевка", bio: "Отец Мотроны Сергеевой Голубовой.<br><br><b>Причина смерти:</b> умер от простуды.", status: "ok" },
         feodor_v: { name: "Феодор Гавриилов Вишня", dates: "~1860–1868 г.р.", place: "С. Верхняя Сыроватка", bio: "Крестьянин, православный. Отец четверых сыновей: Харитона, Никифора, Димитрия и Семена.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "approx", note: "Год рождения установлен ориентировочно." },
         anastasia_ch: { name: "Анастасия Феодотова", dates: "Умершая", place: "С. Верхняя Сыроватка", bio: "Жена Феодора Гавриилова Вишни. Мать Харитона, Семена, Никифора и Димитрия.", status: "ok" },
         andrey_k: { name: "Андрей Иакимов Кочмола", dates: "01.10.1861 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима Филиппова Кочмолы и Марфы Ефимовой.", status: "ok" },
@@ -1425,7 +1469,7 @@
         evfrosinia_k: { name: "Евфросиния Иакимов Кочмола", dates: "19.01.1873 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима Кочмолы и Марфы Ефимовой.", status: "ok" },
         epistimia_k: { name: "Епистимия Иакимова Кочмола", dates: "04.11.1875 – 18.07.1878", place: "С. Верхняя Сыроватка", bio: "Дочь Иакима и Марфы. Умерла 18 июля 1878 года в возрасте трех лет от скарлатины.", status: "ok" },
         konstantin_k: { name: "Константин Иакимович Кочмола", dates: "20.05.1868 г.", place: "С. Верхняя Сыроватка", bio: "Сын Иакима и Марфы. 25 января 1887 года женился на 20-летней Мотроне Сергеевой Голубовой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1930 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
-        motrona_g: { name: "Мотрона Сергеева Голубова", dates: "1867 г.р.", place: "С. Верхняя Сыроватка", bio: "Дочь Сергея Васильева Голуба (1846–1876). Вышла замуж в 20 лет 25 января 1887 года.", status: "ok" },
+        motrona_g: { name: "Мотрона Сергеева Голубова", dates: "1867 г.р.", place: "С. Верхняя Сыроватка", bio: "Вышла замуж в 20 лет 25 января 1887 года за Константина Иакимовича Кочмолу.", status: "ok" },
         hariton_v: { name: "Харитон Феодоров Вишня", dates: "01.06.1885 – 05.10.1922", place: "С. Верхняя Сыроватка", bio: "Брат Семена Вишни. Венчался в 1907 г. с Матроной Климовой Коваленко.<br><br><b>Причина смерти:</b> умер от горловой чахотки.", status: "ok" },
         matrona_kovalenko: { name: "Матрона Климова Коваленко", dates: "1885 г.р.", place: "С. Верхняя Сыроватка", bio: "Жена Харитона Феодорова Вишни. Венчались в 1907 году.", status: "ok" },
         nikifor_v: { name: "Никифор Вишня Феодоров", dates: "01.02.1897 г.", place: "С. Верхняя Сыроватка", bio: "Брат Семена и Харитона. Крестьянин, православный.", status: "ok" },
@@ -1442,43 +1486,48 @@
         feodor_haritonov: { name: "Феодор Харитонов Вишня", dates: "06.06.1908 г.", place: "С. Верхняя Сыроватка", bio: "Сын Харитона Феодорова Вишни и Матроны Климовой Коваленко.", status: "ok" },
         antonina_haritonova: { name: "Антонина Харитонова Вишня", dates: "11.11.1910 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Харитона Феодорова Вишни.", status: "ok" },
         nikolay_v: { name: "Николай Семенов Вишня", dates: "22.05.1920 г.", place: "С. Верхняя Сыроватка", bio: "Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы. Первый ребенок в семье.", status: "ok" },
-        mariya_v: { name: "Мария Семенова Вишня", dates: "09.12.1922 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Семена Феодорова Вишни и Феодосии Константиновны Кочмолы. Второй ребенок в семье.", status: "ok" },
+        mariya_v: { name: "Мария Семенова Вишня", dates: "09.12.1922 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Семена Феодорова Вишни и Феодосии Константиновны Кочмолы. Второй ребенок в семье.<br><br><b>Захоронение:</b> Покоится в семейном захоронении (запечатлена на фото памятника).", status: "ok" },
         anna_v: { name: "Анна Семенова Вишня", dates: "07.02.1924 г.", place: "С. Верхняя Сыроватка", bio: "Дочь Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.", status: "ok" },
-        ivan_v: { name: "Иван Семенович Вишня", dates: "27.11.1928 г.", place: "С. Верхняя Сыроватка", bio: "Отец ДЕДЫ. Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.<br><br><b>Свидетельство о рождении:</b> родился 27 ноября 1928 года в с. Верхняя Сыроватка.<br><b>Брак:</b> 28 февраля 1957 года вступил в брак с Полиной Евдокимовной Федченко.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с женой Полиной и матерью Феодосией.", status: "ok" },
+        ivan_v: { name: "Иван Семенович Вишня", dates: "27.11.1928 г.", place: "С. Верхняя Сыроватка", bio: "Отец ДЕДЫ. Сын Семена Феодорова Вишни и Феодосии Константиновны Кочмолы.<br><br><b>Свидетельство о рождении:</b> родился 27 ноября 1928 года в с. Верхняя Сыроватка.<br><b>Брак:</b> 28 февраля 1957 года вступил в брак с Полиной Евдокимовной Федченко.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с женой Полиной, сестрой Марией и матерью Феодосией.", status: "ok" },
         polina_f: { name: "Полина Евдокимовна Федченко", dates: "20.01.1929 г.", place: "С. Малий Бобрик", bio: "Супруга Ивана Семеновича Вишни. Родилась 20 января 1929 года в селе Малый Бобрик.<br><br><b>Брак:</b> 28 февраля 1957 года с Иваном Семеновичем Вишней. Мать ДЕДЫ.<br><br><b>Захоронение:</b> Покоится в общей семейной могиле вместе с мужем и Феодосией.", status: "ok" },
         ded_yura: { name: "ДЕДА", dates: "Поколение V", place: "С. Верхняя Сыроватка / Малый Бобрик", bio: "Сын Ивана Семеновича Вишни и Полины Евдокимовны Федченко. Главная объединяющая фигура обоих родов.", status: "ok" },
         
-        // НОВЫЕ ПЕРСОНЫ (ГРИЦАЙ / КОПИЦЯ)
-        arkhip_podoprigora: { name: "Архип Игнатов Подопригора", dates: "Умерший", place: "Неизвестно", bio: "Отец Иакова Архиповича Подопригоры.", status: "ok" },
-        nadezhda_simeonova: { name: "Надежда Симеонова", dates: "Умершая", place: "Неизвестно", bio: "Жена Архипа Игнатова Подопригоры. Мать Иакова Архиповича Подопригоры.", status: "ok" },
-        semen_podoprigor_1: { name: "Семен Подопригор", dates: "1878 – 1879", place: "Неизвестно", bio: "Сын Архипа Игнатова и Надежды Симеоновой. Умер во младенчестве.", status: "ok" },
-        semen_podoprigor_2: { name: "Семен Подопригор", dates: "1878 – 1879", place: "Неизвестно", bio: "Сын Архипа Игнатова и Надежды Симеоновой. Умер во младенчестве.", status: "ok" },
-        evfrosinia_podoprigor: { name: "Евфросиния Подопригор", dates: "1879 – Умершая", place: "Неизвестно", bio: "Дочь Архипа Игнатова и Надежды Симеоновой. Сестра Иакова.", status: "ok" },
-        iakov_pidoprigora: { name: "Иаков Архипов Подопригора", dates: "1883 – Умерший", place: "Неизвестно", bio: "Отец Якилины Яколовны. Сын Архипа Игнатова и Надежды Симеоновой.<br><br><span style='color:#9f1239'><b>Репрессии:</b> Осужден во время коллективизации в 1931 году по ст. 54-10 УК УССР (Антисоветская агитация и пропаганда).</span>", status: "ok" },
-        evdokia_vasilieva: { name: "Евдокия Василиева", dates: "Умершая", place: "Неизвестно", bio: "Жена Иакова Архипова Подопригоры. Мать Якилины.", status: "ok" },
+        // ВЕТКА КОПИЦЯ / ПОДОПРИГОРА
+        arkhip_podoprigora: { name: "Архип Игнатов Подопригора", dates: "XIX век – Умерший", place: "Штеповский район", bio: "Отец Иакова Архиповича Подопригоры. Был женат первым браком на Надежде Семеновне (умерла в 1885 г.), вторым браком с 16 января 1885 г. — на Вассе Клименковой Терентиевой.", status: "ok" },
+        nadezhda_simeonova: { name: "Надежда Семеновна Подопригора", dates: "Ум. 04.01.1885 г.", place: "Штеповский район", bio: "Первая жена Архипа Игнатова Подопригоры. Мать Иакова, Семена и Евфросинии.<br><br><b>Причина смерти:</b> умерла 4 января 1885 года от воспаления легких.", status: "ok" },
+        vassa_klimenkova: { name: "Васса Клименкова Терентиева", dates: "1862 г.р.", place: "Штеповский район", bio: "Вторая супруга Архипа Игнатова Подопригоры. Брак заключен 16 января 1885 года. Мать Иулиании и Анны.", status: "ok" },
+        
+        semen_podoprigor_1: { name: "Семен Архипов Подопригора", dates: "1878 – 24.10.1879", place: "Штеповский район", bio: "Сын Архипа Игнатова Подопригоры и Надежды Семеновны. Родился в 1878 г.<br><br><b>Причина смерти:</b> умер 24 октября 1879 года от младенчества.", status: "ok" },
+        evfrosinia_podoprigor: { name: "Евфросиния Архипова Подопригора", dates: "20.09.1879 г.р.", place: "Штеповский район", bio: "Дочь Архипа Игнатова Подопригоры и Надежды Семеновны. Родилась 20 сентября 1879 года. Сестра Иакова.", status: "ok" },
+        iakov_pidoprigora: { name: "Иаков Архипов Подопригора", dates: "27.11.1882 – Умерший", place: "Штеповский район", bio: "Отец Якилины Яколовны. Родился 27 ноября 1882 года. Сын Архипа Игнатова Подопригоры и Надежды Семеновны.<br><br><b>Брак:</b> в 1907 году женился на Евдокии Васильевне.", status: "ok" },
+        evdokia_vasilieva: { name: "Евдокия Василиева", dates: "Брак 1907 г.", place: "Штеповский район", bio: "Жена Иакова Архипова Подопригоры. Брак заключен в 1907 году. Мать Якилины.", status: "ok" },
 
-        moisey_kopitsya: { name: "Моисей Васильев Копица", dates: "1862 – 28.10.1915", place: "с. Штеповка", bio: "Отец Павла Моисеева Копицы.<br><br><b>Брак:</b> 30 января 1881 года обвенчался с Ириной Ивановой Ивковой.<br><br><b>Причина смерти:</b> умер 28 октября 1915 года от тифа.", status: "ok" },
-        irina_ivkova: { name: "Ирина Иванова Ивкова", dates: "1863 – Умершая", place: "с. Штеповка", bio: "Супруга Моисея Васильева Копицы. Обвенчались 30 января 1881 года. Мать Павла Моисеева Копицы.", status: "ok" },
-        pavel_kopitsya: { name: "Павел Моисеев Копица", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Сын Моисея Васильева Копицы и Ирины Ивановой Ивковой. Отец большого семейства Копиця.<br><br><b>Брак:</b> 25 января 1904 года обвенчался с Иустинией Христофоровой Тимошенковой.", status: "ok" },
-        iustiniya_khristoforova: { name: "Иустиния Христофорова Тимошенкова", dates: "Брак 25.01.1904 г.", place: "с. Штеповка", bio: "Жена Павла Моисеева Копицы. Обвенчались 25 января 1904 года. Мать Луки, Евфимии, Александры, Марии, Евгении, Иоанна и Федора.", status: "ok" },
-        luka_kopitsya: { name: "Лука Павлович Копиця", dates: "17.10.1904 – 11.11.1904", place: "с. Штеповка", bio: "Старший брат Федора Павловича Копиця.<br><br><b>Причина смерти:</b> умер от гриппа (прожил меньше месяца).", status: "ok" },
-        evfimia_kopitsya: { name: "Евфимия Павловна Копиця", dates: "12.09.1905 г.", place: "с. Штеповка", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
-        aleksandra_kopitsya: { name: "Александра Павловна Копиця", dates: "19.03.1907 г.", place: "с. Штеповка", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
-        maria_kopitsya: { name: "Мария Павловна Копиця", dates: "16.07.1910 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
-        evgenia_kopitsya: { name: "Евгения Павловна Копиця", dates: "23.12.1911 г.", place: "с. Штеповка", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
-        ioann_kopitsya: { name: "Иоанн Павлович Копиця", dates: "24.05.1913 г.", place: "с. Штеповка", bio: "Младший брат Федора Павловича Копиця.", status: "ok" },
-        fedor_gritsay_sn: { name: "Федор Грицай", dates: "ХХ век", place: "Неизвестно", bio: "Отец Владимира Федоровича Грицай. Его подпись фигурирует в архивной записи о рождении сына.", status: "ok" },
-        fedor_kopitsya: { name: "Федор Павлович Копиця", dates: "07.02.1909 – 29.11.1944", place: "Сумская обл. / Погиб: Чехословакия", bio: "Отец Веры Федоровны Копиця. Супруг Якилины Яколовны Пидопрыгоры.<br><br><b>Участие в Великой Отечественной войне:</b><br>Призван в 1944 году Погребищенским РВК (Винницкая обл.). Служил в звании <b>гвардии красноармейца</b> в 203-м гвардейском стрелковом полку (70-я гв. стрелковая дивизия).<br><br><b>Причина выбытия:</b> убит в бою 29 ноября 1944 года.<br><b>Первичное место захоронения:</b> Чехословакия, Стропковский р-н, западнее с. Белеевце, южный склон высоты 577.", status: "ok" },
-        yakilina_pidoprigora: { name: "Якилина Яколовна Пидопрыгора", dates: "1909 – Умершая", place: "Неизвестно", bio: "Мать Веры Федоровны Копиця. Супруга Федора Павловича Копиця. Дочь Иакова Архиповича Подопригоры и Евдокии Василиевы.", status: "ok" },
-        vladimir_gritsay: { name: "Владимир Федорович Грицай", dates: "02.01.1928 г.", place: "Неизвестно", bio: "Отец Тамары Владимировны Грицай. Сын Федора Грицая.", status: "ok" },
-        vera_kopitsya: { name: "Вера Федоровна Копиця", dates: "20.01.1936 г.", place: "Неизвестно", bio: "Мать Тамары Владимировны Грицай. Дочь Федора Павловича Копиця и Якилины Яколовны Пидопрыгоры.", status: "ok" },
-        tamara_gritsay: { name: "Тамара Владимировна Грицай", dates: "Поколение III", place: "Неизвестно", bio: "Дочь Владимира Федоровича Грицай и Веры Федоровны Копиця. Хранительница священных семейных икон, которыми её благословила Феодосия Константиновна Кочмола.", status: "ok" }
+        dimitriy_podoprigora: { name: "Димитрий Архипов Подопригора", dates: "1887 – 1892", place: "Штеповский район", bio: "Сын Архипа Подопригоры. Родился в 1887 году.<br><br><b>Причина смерти:</b> умер в 1892 году от заушницы.", status: "ok" },
+        iuliania_podoprigora: { name: "Иулиания Архипова Подопригора", dates: "1889 – 14.11.1892", place: "Штеповский район", bio: "Дочь Архипа Игнатова Подопригоры и его второй жены Вассы Клименковой. Родилась в 1889 году.<br><br><b>Причина смерти:</b> умерла 14 ноября 1892 года от заушницы.", status: "ok" },
+        anna_podoprigora: { name: "Анна Архипова Подопригора", dates: "30.01.1892 г.р.", place: "Штеповский район", bio: "Дочь Архипа Игнатова Подопригоры и Вассы Клименковой. Родилась 30 января 1892 года.", status: "ok" },
+
+        moisey_kopitsya: { name: "Моисей Васильев Копица", dates: "1862 – 28.10.1915", place: "Штеповский район (с. Штеповка)", bio: "Отец Павла Моисеева Копицы.<br><br><b>Брак:</b> 30 января 1881 года обвенчался с Ириной Ивановой Ивковой.<br><br><b>Причина смерти:</b> умер 28 октября 1915 года от тифа.", status: "ok" },
+        irina_ivkova: { name: "Ирина Иванова Ивкова", dates: "1863 – Умершая", place: "Штеповский район (с. Штеповка)", bio: "Супруга Моисея Васильева Копицы. Обвенчались 30 января 1881 года. Мать Павла Моисеева Копицы.", status: "ok" },
+        pavel_kopitsya: { name: "Павел Моисеев Копица", dates: "Брак 25.01.1904 г.", place: "Штеповский район (с. Штеповка)", bio: "Сын Моисея Васильева Копицы и Ирины Ивановой Ивковой. Отец большого семейства Копиця.<br><br><b>Брак:</b> 25 января 1904 года обвенчался с Иустинией Христофоровой Тимошенковой.", status: "ok" },
+        iustiniya_khristoforova: { name: "Иустиния Христофорова Тимошенкова", dates: "Брак 25.01.1904 г.", place: "Штеповский район (с. Штеповка)", bio: "Жена Павла Моисеева Копицы. Обвенчались 25 января 1904 года. Мать Луки, Евфимии, Александры, Марии, Евгении, Иоанна и Федора.", status: "ok" },
+        luka_kopitsya: { name: "Лука Павлович Копиця", dates: "17.10.1904 – 11.11.1904", place: "Штеповский район (с. Штеповка)", bio: "Старший брат Федора Павловича Копиця.<br><br><b>Причина смерти:</b> умер от гриппа (прожил меньше месяца).", status: "ok" },
+        evfimia_kopitsya: { name: "Евфимия Павловна Копиця", dates: "12.09.1905 г.", place: "Штеповский район (с. Штеповка)", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
+        aleksandra_kopitsya: { name: "Александра Павловна Копиця", dates: "19.03.1907 г.", place: "Штеповский район (с. Штеповка)", bio: "Старшая сестра Федора Павловича Копиця.", status: "ok" },
+        maria_kopitsya: { name: "Мария Павловна Копиця", dates: "16.07.1910 г.", place: "Штеповский район (с. Штеповка)", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
+        evgenia_kopitsya: { name: "Евгения Павловна Копиця", dates: "23.12.1911 г.", place: "Штеповский район (с. Штеповка)", bio: "Младшая сестра Федора Павловича Копиця.", status: "ok" },
+        ioann_kopitsya: { name: "Иоанн Павлович Копиця", dates: "24.05.1913 г.", place: "Штеповский район (с. Штеповка)", bio: "Младший брат Федора Павловича Копиця.", status: "ok" },
+        fedor_gritsay_sn: { name: "Федор Грицай", dates: "ХХ век", place: "Штеповский район", bio: "Отец Владимира Федоровича Грицай. Его подпись фигурирует в архивной записи о рождении сына.", status: "ok" },
+        fedor_kopitsya: { name: "Федор Павлович Копиця", dates: "07.02.1909 – 29.11.1944", place: "Штеповский район / Погиб: Чехословакия", bio: "Отец Веры Федоровны Копиця. Супруг Якилины Яколовны Пидопрыгоры.<br><br><b>Участие в Великой Отечественной войне:</b><br>Призван в 1944 году Погребищенским РВК (Винницкая обл.). Служил в звании <b>гвардии красноармейца</b> в 203-м гвардейском стрелковом полку (70-я гв. стрелковая дивизия).<br><br><b>Причина выбытия:</b> убит в бою 29 ноября 1944 года.<br><b>Первичное место захоронения:</b> Чехословакия, Стропковский р-н, западнее с. Белеевце, южный склон высоты 577.", status: "ok" },
+        yakilina_pidoprigora: { name: "Якилина Яколовна Пидопрыгора", dates: "1909 – Умершая", place: "Штеповский район", bio: "Мать Веры Федоровны Копиця. Супруга Федора Павловича Копиця. Дочь Иакова Архиповича Подопригоры и Евдокии Василиевы.", status: "ok" },
+        vladimir_gritsay: { name: "Владимир Федорович Грицай", dates: "02.01.1928 г.", place: "Штеповский р-н, хутор Верхний", bio: "Отец ТОМЫ (Тамары Владимировны Грицай). Сын Федора Грицая.", status: "ok" },
+        vera_kopitsya: { name: "Вера Федоровна Копиця", dates: "20.01.1936 г.", place: "с. Серобабино", bio: "Мать ТОМЫ (Тамары Владимировны Грицай). Дочь Федора Павловича Копиця и Якилины Яколовны Пидопрыгоры.", status: "ok" },
+        tamara_gritsay: { name: "ТОМА", dates: "Поколение III", place: "Штеповский район", bio: "Тамара Владимировна Грицай. Дочь Владимира Федоровича Грицай и Веры Федоровны Копиця.", status: "ok" }
     };
 
     // РЕЕСТР АРХИВНЫХ ДОКУМЕНТОВ
     const archiveDocuments = [
         // ЗИНЧЕНКО / ФЕДЧЕНКО
-        { id: "doc_aleksei_paraskeva_marriage_1874", title: "Брак Алексея Федьченко и Параскевы Велитченковой (1874 г.)", image: "paraskeva+aleksei_1874.png", peopleRoles: { "aleksey_kirillov_f": "Жених", "paraskeva_mikhaylova_f": "Невеста" } },
+        { id: "doc_aleksei_paraskeva_marriage_1874", title: "Брак Алексея Федьченко и Параскевы Велитченковой (1874 г.)", image: "Paraskeva+aleksei_1874.png", peopleRoles: { "aleksey_kirillov_f": "Жених", "paraskeva_mikhaylova_f": "Невеста" } },
         { id: "doc_ilarion_birth_1875", title: "Рождение Илариона Федьченко (28 марта 1875 г.)", image: "ilarion_1875.png", peopleRoles: { "ilarion_f": "Ребенок", "aleksey_kirillov_f": "Отец", "paraskeva_mikhaylova_f": "Мать" } },
         { id: "doc_ilarion_marriage_1893", title: "Брак Илариона и Анастасии (25 апреля 1893 г.)", image: "svadba_ilariona+anastasii.png", peopleRoles: { "ilarion_f": "Жених", "anastasia_aleksieva_f": "Невеста" } },
         { id: "doc_marfa_birth_1875", title: "Рождение Марфы Зинченко (4 июля 1875 г.)", image: "marfa_1875.png", peopleRoles: { "marfa_z": "Ребенок", "aleksey_emelianov_z": "Отец", "iulianiya_karpova_z": "Мать" } },
@@ -1530,7 +1579,6 @@
         { id: "doc_kirill_birth_1865", title: "Рождение Кирилла (18 марта 1865 г.)", image: "rozhdenie_kirilla_1865.png", peopleRoles: { "kirill_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
         { id: "doc_evfrosinia_birth_1873", title: "Рождение Евфросинии (19 января 1873 г.)", image: "rozhdenie_evfrosinii_1873.png", peopleRoles: { "evfrosinia_k": "Ребенок", "iakim_k": "Отец", "marfa_e": "Мать" } },
         { id: "doc_iakim_death_1889", title: "Смерть Иакима Кочмолы (1889 г.)", image: "smert_iakima_1889.png", peopleRoles: { "iakim_k": "Погибший" } },
-        { id: "doc_sergey_death_1876", title: "Смерть Сергея Голуба (2 февраля 1876 г.)", image: "smert_sergeya_1876.png", peopleRoles: { "sergey_g": "Умерший" } },
         { id: "doc_dimitriy_birth_1887", title: "Рождение Димитрия (26 октября 1887 г.)", image: "dimitriy_kochmola_1887.png", peopleRoles: { "dimitriy_k": "Ребенок", "konstantin_k": "Отец", "motrona_g": "Мать" } },
         { id: "doc_dimitriy_marriage_1907", title: "Брак Димитрия и Пелагии (1907 г.)", image: "dimitriy+pelagiya_1907.png", peopleRoles: { "dimitriy_k": "Жених", "pelagiya_p": "Невеста" } },
         { id: "doc_daniil_birth_1908", title: "Рождение Даниила (1908 г.)", image: "daniil_kochmola_1908.png", peopleRoles: { "daniil_k": "Ребенок", "dimitriy_k": "Отец", "pelagiya_p": "Мать" } },
@@ -1550,12 +1598,20 @@
         { id: "doc_mariya_birth_1922", title: "Рождение Марии (9 декабря 1922 г.)", image: "mariya_1922.jpg", peopleRoles: { "mariya_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } },
         { id: "doc_anna_birth_1924", title: "Рождение Анны (7 февраля 1924 г.)", image: "anna1924.png", peopleRoles: { "anna_v": "Ребенок", "semen_v": "Отец", "fedosia_k": "Мать" } },
 
-        // ГРИЦАЙ / КОПИЦЯ
+        // КОПИЦЯ / ПОДОПРИГОРА
+        { id: "doc_iakim_evdokia_marriage_1907", title: "Брак Иакима Подопригоры и Евдокии (1907 г.)", image: "iakim+evdokia_1907.png", peopleRoles: { "iakov_pidoprigora": "Жених", "evdokia_vasilieva": "Невеста" } },
+        { id: "doc_iakov_birth_1882", title: "Рождение Иакова Архипова Подопригоры (27 ноября 1882 г.)", image: "IAkim_arhipov_1882.png", peopleRoles: { "iakov_pidoprigora": "Ребенок", "arkhip_podoprigora": "Отец", "nadezhda_simeonova": "Мать" } },
+        { id: "doc_semen_death_1879", title: "Смерть Семена Архипова Подопригоры (24 октября 1879 г.)", image: "SEmen_1879.png", peopleRoles: { "semen_podoprigor_1": "Умерший", "arkhip_podoprigora": "Отец", "nadezhda_simeonova": "Мать" } },
+        { id: "doc_evfrosinia_birth_1879", title: "Рождение Евфросинии Подопригоры (20 сентября 1879 г.)", image: "EVfrosinia_1879.png", peopleRoles: { "evfrosinia_podoprigor": "Ребенок", "arkhip_podoprigora": "Отец", "nadezhda_simeonova": "Мать" } },
+        { id: "doc_nadezhda_death_1885", title: "Смерть Надежды Семеновны Подопригоры (4 января 1885 г.)", image: "SMert_nadezhda_1885.png", peopleRoles: { "nadezhda_simeonova": "Умершая", "arkhip_podoprigora": "Муж" } },
+        { id: "doc_arkhip_vassa_marriage_1885", title: "Брак Архипа Подопригоры и Вассы Терентиевой (16 января 1885 г.)", image: "arhip+vassa_1885.png", peopleRoles: { "arkhip_podoprigora": "Жених", "vassa_klimenkova": "Невеста" } },
+        { id: "doc_iuliania_death_1892", title: "Смерть Иулиании Архиповой Подопригоры (14 ноября 1892 г.)", image: "IUliania_1892.png", peopleRoles: { "iuliania_podoprigora": "Умершая", "arkhip_podoprigora": "Отец", "vassa_klimenkova": "Мать" } },
+        { id: "doc_anna_birth_1892", title: "Рождение Анны Архиповой Подопригоры (30 января 1892 г.)", image: "ANna_1892.png", peopleRoles: { "anna_podoprigora": "Ребенок", "arkhip_podoprigora": "Отец", "vassa_klimenkova": "Мать" } },
+        { id: "doc_dimitriy_death_1892", title: "Смерть Димитрия Архипова Подопригоры (1892 г.)", image: "DImitriy_smert_1892.png", peopleRoles: { "dimitriy_podoprigora": "Умерший", "arkhip_podoprigora": "Отец" } },
+
         { id: "doc_moisei_irina_marriage_1881", title: "Брак Моисея Копицы и Ирины Ивковой (30 января 1881 г.)", image: "Moisei+irina_1881.png", peopleRoles: { "moisey_kopitsya": "Жених", "irina_ivkova": "Невеста" } },
-        { id: "doc_moisei_death_1915", title: "Смерть Моисея Копицы (28 октября 1915 г.)", image: "Moisei_smert_1915.png", peopleRoles: { "moisey_kopitsya": "Умерший" } },
+        { id: "doc_moisei_death_1925", title: "Смерть Моисея Копицы (28 октября 1915 г.)", image: "Moisei_smert_1915.png", peopleRoles: { "moisey_kopitsya": "Умерший" } },
         { id: "doc_pavel_iustinia_marriage_1904", title: "Брак Павла Копицы и Иустинии Тимошенковой (25 января 1904 г.)", image: "Pavel+iustinia_1904.png", peopleRoles: { "pavel_kopitsya": "Жених", "iustiniya_khristoforova": "Невеста" } },
-        { id: "doc_iakov_birth_1874", title: "Рождение Иакова Подопригоры (1874 г.)", image: "Iakov_Pidoprigora_1874.png", peopleRoles: { "iakov_pidoprigora": "Ребенок", "arkhip_podoprigora": "Отец", "nadezhda_simeonova": "Мать" } },
-        { id: "doc_repr_iakov_p", title: "Запись об осуждении (1931) - ст. 54-10 КК УСРР", image: "Pidoprigora_Yakiv_osuzhden_1931.png", peopleRoles: { "iakov_pidoprigora": "Осужден" } },
         
         { id: "doc_aleksandra_k_birth", title: "Рождение Александры Копици (1907)", image: "Aleksandra_1907.png", peopleRoles: { "aleksandra_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
         { id: "doc_evgenia_k_birth", title: "Рождение Евгении Копици (1911)", image: "Evgenia_1911.png", peopleRoles: { "evgenia_kopitsya": "Ребенок", "pavel_kopitsya": "Отец", "iustiniya_khristoforova": "Мать" } },
@@ -1571,12 +1627,11 @@
         { id: "doc_fedor_k_boevoi", title: "Боевой путь Федора Копици", image: "Boevoi_put_fedor.png", peopleRoles: { "fedor_kopitsya": "Участник ВОВ" } },
         { id: "doc_fedor_kopitsya_sign", title: "Запись акта о рождении Веры Копиця (1936)", image: "fedor_kopica_1936.png", peopleRoles: { "fedor_kopitsya": "Отец", "vera_kopitsya": "Ребенок", "yakilina_pidoprigora": "Мать" } },
         { id: "doc_fedor_gritsay_sign", title: "Запись акта о рождении Владимира Грицай (1928)", image: "fedor_gricay.png", peopleRoles: { "fedor_gritsay_sn": "Отец", "vladimir_gritsay": "Ребенок" } },
-        
         { id: "doc_vladimir_birth_1928", title: "Запись о рождении Владимира (1928 г.)", image: "Vladimir_1928.jpg", peopleRoles: { "vladimir_gritsay": "Свидетельство" } },
         { id: "doc_vera_birth_1936", title: "Запись о рождении Веры (1936 г.)", image: "Vera_1936.jpg", peopleRoles: { "vera_kopitsya": "Свидетельство" } },
 
-        // НОВЫЕ ДОКУМЕНТЫ: МОГИЛА И РЕПРЕССИИ
-        { id: "doc_mogila", title: "Семейное захоронение (Могила)", image: "Mogila.png", peopleRoles: { "ivan_v": "Похоронен", "polina_f": "Похоронена", "fedosia_k": "Похоронена" } },
+        // МОГИЛА И РЕПРЕССИИ
+        { id: "doc_mogila", title: "Семейное захоронение (Могила)", image: "Mogila.png", peopleRoles: { "ivan_v": "Похоронен", "polina_f": "Похоронена", "fedosia_k": "Похоронена", "mariya_v": "Похоронена" } },
         { id: "doc_repr_kochmola", title: "Запись об осуждении (1930) - ст. 54-10 КК УСРР", image: "Kochmola_konstantin_osuzhden_1930.png", peopleRoles: { "konstantin_k": "Осужден" } },
         { id: "doc_repr_fedor_v", title: "Запись об осуждении (1930) - ст. 54-10 КК УСРР", image: "Fedor_vishnya_osuzhden_1930.png", peopleRoles: { "feodor_v": "Осужден" } },
         { id: "doc_repr_semen_v", title: "Запись об осуждении (1931) - ст. 54-10 КК УСРР", image: "Semen_vishnya_osuzhden_1931.png", peopleRoles: { "semen_v": "Осужден" } }
@@ -1623,7 +1678,7 @@
 
         const statusBox = document.getElementById("p-status-box");
         if (p.status === "approx") {
-            statusBox.innerHTML = `<div class="status-alert yellow">⚠️ <b>Приблизительные данные:</b><br>${p.note || ""}</div>`;
+            statusBox.innerHTML = `<div class="status-alert yellow">⚠️ <b>Внимание:</b><br>${p.note || "Не точная информация"}</div>`;
         } else {
             statusBox.innerHTML = "";
         }
@@ -1684,7 +1739,7 @@
     }
 
     // ==============================================================
-    // СИСТЕМА LIGHTBOX (С ЗУМОМ И ПАНОРАМИРОВАНИЕМ КАРТИНКИ)
+    // LIGHTBOX
     // ==============================================================
     let lbScale = 1;
     let lbPanX = 0;
@@ -1782,7 +1837,7 @@
     });
 
     // ==============================================================
-    // ДИНАМИЧЕСКИЙ ДВИЖОК ВЕТОК (SVG ДЛЯ ВСЕХ ДРЕВ)
+    // ДВИЖОК ВЕТОК (SVG)
     // ==============================================================
     function getCardAnchor(id, canvasEl) {
         const el = document.getElementById(id);
@@ -1845,21 +1900,14 @@
                     cAnchors.forEach(c => addPath(`M ${c.top.x} ${busY} V ${c.top.y}`));
                 }
 
-                function drawParentToChild(parentId, childId) {
-                    const p = getCardAnchor(parentId, canvas);
-                    const c = getCardAnchor(childId, canvas);
-                    if (!p || !c) return;
-                    if (Math.abs(p.bottom.x - c.top.x) < 2) {
-                        addPath(`M ${p.bottom.x} ${p.bottom.y} V ${c.top.y}`);
-                    } else {
-                        const midY = p.bottom.y + (c.top.y - p.bottom.y) / 2;
-                        addPath(`M ${p.bottom.x} ${p.bottom.y} V ${midY} H ${c.top.x} V ${c.top.y}`);
-                    }
-                }
+                // Ветка Иакима и Марфы Кочмолы к 5 детям
+                drawCoupleAndChildren('card-iakim', 'card-marfa-e', [
+                    'card-andrey', 'card-kirill', 'card-evfrosinia', 'card-epistimia', 'card-konstantin'
+                ]);
 
-                drawCoupleAndChildren('card-iakim', 'card-marfa-e', ['card-andrey', 'card-kirill', 'card-evfrosinia', 'card-epistimia', 'card-konstantin']);
-                drawParentToChild('card-sergey', 'card-motrona');
-                drawCoupleAndChildren('card-konstantin', 'card-motrona', ['card-dimitriy-k', 'card-maria-k', 'card-ioann-k', 'card-mark-k', 'card-fedosia-k']);
+                drawCoupleAndChildren('card-konstantin', 'card-motrona', [
+                    'card-dimitriy-k', 'card-maria-k', 'card-ioann-k', 'card-mark-k', 'card-fedosia-k'
+                ]);
                 drawCoupleAndChildren('card-dimitriy-k', 'card-pelagiya-p', ['card-daniil-k', 'card-roman-k']);
                 drawCoupleAndChildren('card-feodor', 'card-anastasia', ['card-hariton', 'card-nikifor', 'card-dimitriy-v', 'card-semen']);
                 drawCoupleAndChildren('card-hariton', 'card-matrona-kovalenko', ['card-feodor-haritonov', 'card-antonina-haritonova']);
@@ -1914,7 +1962,10 @@
                     'card-f-anna-z', 'card-f-pavel', 'card-f-vlasiy', 'card-f-marina', 
                     'card-f-evdokia', 'card-f-iuliyaniya', 'card-f-antonina', 'card-f-fekla', 'card-f-marfa'
                 ]);
-                drawFCoupleAndChildren('card-f-marfa', 'card-f-ivan-sereda', ['card-f-aleksandr-sereda', 'card-f-iuliania-sereda']);
+                drawFCoupleAndChildren('card-f-marfa', 'card-f-ivan-sereda', [
+                    'card-f-andrey-sereda', 'card-f-ioann-sereda', 'card-f-aleksandr-sereda', 
+                    'card-f-iuliania-sereda', 'card-f-fekla-sereda', 'card-f-timofey-sereda', 'card-f-stefan-sereda'
+                ]);
                 drawFCoupleAndChildren('card-f-diomid', 'card-f-antonina', []);
                 drawFCoupleAndChildren('card-f-ilarion', 'card-f-anastasia', [
                     'card-f-daniil', 'card-f-evdokim', 'card-f-ekaterina', 'card-f-feodora', 
@@ -1925,7 +1976,7 @@
             }
         } catch (e) { console.error(e); }
 
-        // --- ДЕРЕВО ГРИЦАЙ / КОПИЦЯ ---
+        // --- ДЕРЕВО КОПИЦЯ / ПОДОПРИГОРА ---
         try {
             const gSvg = document.getElementById("gritsay-tree-svg");
             const gCanvas = document.getElementById("gritsay-canvas");
@@ -1983,10 +2034,17 @@
                     'card-g-maria', 'card-g-evgenia', 'card-g-ioann', 'card-g-fedor-k'
                 ]);
 
-                // Связи Подопригора
+                // Связи Архипа с Надеждой (Семен, Евфросиния, Иаков, Димитрий)
                 drawGCoupleAndChildren('card-g-arkhip-p', 'card-g-nadezhda-p', [
-                    'card-g-semen1', 'card-g-semen2', 'card-g-evfrosinia-p', 'card-g-iakov-p'
+                    'card-g-semen1', 'card-g-evfrosinia-p', 'card-g-iakov-p', 'card-g-dimitriy-p'
                 ]);
+
+                // Связи Архипа с Вассой (Иулиания, Анна)
+                drawGCoupleAndChildren('card-g-arkhip-p', 'card-g-vassa-p', [
+                    'card-g-iuliania-p', 'card-g-anna-p'
+                ]);
+
+                // Семья Иакова и Евдокии
                 drawGCoupleAndChildren('card-g-iakov-p', 'card-g-evdokia-p', ['card-g-yakilina']);
 
                 // Объединение семей
@@ -1998,7 +2056,7 @@
     }
 
     // ==============================================================
-    // СИСТЕМА УПРАВЛЕНИЯ ЗУМОМ И ПЕРЕМЕЩЕНИЕМ ХОЛСТА
+    // ЗУМ И ПАНОРАМИРОВАНИЕ
     // ==============================================================
     let zoomScale = 0.75;
     let offsetX = 0;
@@ -2048,13 +2106,21 @@
             fedOffsetX = (window.innerWidth - canvasWidth * fedZoomScale) / 2;
             fedOffsetY = isMobile ? 150 : 70;
         } else if (activeCanvasType === 'gritsay') {
-            griZoomScale = isMobile ? 0.45 : 0.8;
-            const canvasWidth = 3500;
+            griZoomScale = isMobile ? 0.40 : 0.75;
+            const canvasWidth = 3800;
             griOffsetX = (window.innerWidth - canvasWidth * griZoomScale) / 2;
             griOffsetY = isMobile ? 100 : 70;
         }
         applyTransform();
         setTimeout(drawAllConnections, 40);
+    }
+
+    function zoomIn() {
+        zoomToPoint(1.2, window.innerWidth / 2, window.innerHeight / 2);
+    }
+
+    function zoomOut() {
+        zoomToPoint(0.8, window.innerWidth / 2, window.innerHeight / 2);
     }
 
     function zoomToPoint(factor, anchorX, anchorY) {
@@ -2081,7 +2147,7 @@
             const newScale = Math.min(Math.max(0.15, griZoomScale * factor), 3.0);
             if (newScale === oldScale) return;
             const canvasX = (anchorX - griOffsetX) / oldScale;
-            const canvasY = (anchorY - griOffsetY) / oldScale;
+            const canvasY = (anchorY - fedOffsetY) / oldScale;
             griZoomScale = newScale;
             griOffsetX = anchorX - canvasX * newScale;
             griOffsetY = anchorY - canvasY * newScale;
